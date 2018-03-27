@@ -17,18 +17,29 @@ describe('fetchData', () => {
       vote_average: 6.5,
       vote_count: 3115,
     }
-  ]}
-    window.fetch = jest.fn().mockImplementation(() => {
-      Promise.resolve({
-        status: 200,
-        json: () => ({
-          mockMovieData
-        })
+  ]};
+    window.fetch = jest.fn().mockImplementation(() => ({
+      status: 200,
+      json: () => new Promise((resolve) => {
+        resolve(mockMovieData);
       })
-    })
-  })
+    }));
+  });
 
-  it('should fetch movie data', () => {
+  it('should fetch movie data', async () => {
+    const expected = mockMovieData.results;
+    const returnedMovies = await Api.fetchData();
+    expect(returnedMovies).toEqual(expected)
+  });
 
-  })
+  it('throw an error if the fetch fails', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject({
+      status: 500
+    }));
+    // const expected = 'error';
+    const results = await Api.fetchData();
+    expect(results).rejects.toEqual(Error('error'))
+  });
+
+
 })

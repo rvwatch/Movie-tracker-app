@@ -8,7 +8,7 @@ export const fetchData = async () => {
   const data = await response.json();
   return data.results
   } catch (error) {
-    throw 'error'
+    throw new Error('error')
   }
 } 
 
