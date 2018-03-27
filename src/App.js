@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import { Router, Route, NavLink } from 'react-router-dom';
-import { fetchApi } from './ApiCalls/apiCalls';
+import { getMovies } from './ApiCalls/apiCalls';
 import './App.css';
 
 class App extends Component {
   async componentDidMount() {
-    const data = fetchApi();
+    const movies = await getMovies();
   }
 
   render() {
