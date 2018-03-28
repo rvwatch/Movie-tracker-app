@@ -1,0 +1,9 @@
+.card {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  color: white;
+  margin: 10px;
+  vertical-align: top;
+  background-size: cover;
+}
