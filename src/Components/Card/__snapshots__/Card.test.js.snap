@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Card
+    date="Release Date: 2017-12-09"
+    image="/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg"
+    overview="Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game."
+    title="Jumanji: Welcome to the Jungle"
+    vote="Rating: 6.5"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h1>
+          Jumanji: Welcome to the Jungle
+</h1>,
+        <h3>
+          Release Date: 2017-12-09
+</h3>,
+        <p>
+          Rating: 6.5
+</p>,
+        <p>
+          Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.
+</p>,
+      ],
+      "className": "card",
+      "style": Object {
+        "background": "url('https://image.tmdb.org/t/p/w500//bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg')",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Jumanji: Welcome to the Jungle",
+        },
+        "ref": null,
+        "rendered": "Jumanji: Welcome to the Jungle",
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Release Date: 2017-12-09",
+        },
+        "ref": null,
+        "rendered": "Release Date: 2017-12-09",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Rating: 6.5",
+        },
+        "ref": null,
+        "rendered": "Rating: 6.5",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
+        },
+        "ref": null,
+        "rendered": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
+        "type": "p",
+      },
+    ],
+    "type": "article",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h1>
+            Jumanji: Welcome to the Jungle
+</h1>,
+          <h3>
+            Release Date: 2017-12-09
+</h3>,
+          <p>
+            Rating: 6.5
+</p>,
+          <p>
+            Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.
+</p>,
+        ],
+        "className": "card",
+        "style": Object {
+          "background": "url('https://image.tmdb.org/t/p/w500//bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg')",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Jumanji: Welcome to the Jungle",
+          },
+          "ref": null,
+          "rendered": "Jumanji: Welcome to the Jungle",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Release Date: 2017-12-09",
+          },
+          "ref": null,
+          "rendered": "Release Date: 2017-12-09",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Rating: 6.5",
+          },
+          "ref": null,
+          "rendered": "Rating: 6.5",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
+          },
+          "ref": null,
+          "rendered": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
+          "type": "p",
+        },
+      ],
+      "type": "article",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

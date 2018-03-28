@@ -6,7 +6,7 @@ import * as Actions from '../../Actions';
 import CardContainer from '../CardContainer/CardContainer';
 import './App.css';
 
-class App extends Component {
+export class App extends Component {
   async componentDidMount() {
     const movies = await getMovies();
     this.props.retrieveMovies(movies);
@@ -21,7 +21,7 @@ class App extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   retrieveMovies: movies => dispatch(Actions.postMovies(movies))
 });
 
