@@ -12,3 +12,13 @@ export const signInAction = user => ({
   type: 'SIGN_IN',
   user
 });
+
+export const validSignIn = error => ({
+  type: 'VALID_SIGNIN',
+  error
+})
+
+export const invalidSignIn = error => ({
+  type: 'INVALID_SIGNIN',
+  error
+});

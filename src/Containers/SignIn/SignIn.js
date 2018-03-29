@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signinUser } from '../../ApiCalls/signinUser';
 import { Route, NavLink, withRouter } from 'react-router-dom';
-import { signInAction } from '../../Actions';
-// const user = await signinUser();
-// console.table(user);
+import { signInAction, invalidSignIn, validSignIn } from '../../Actions';
 
 export class SignIn extends Component {
   constructor() {
@@ -24,11 +22,13 @@ export class SignIn extends Component {
   };
 
   handleSubmit = async (event) => {
-    event.preventDefault();
-    const user = await signinUser({ ...this.state });
-    console.log(user);
-    this.props.signInDispatch(user)
-    this.setState({ email: '', password: '' });
+    try{
+      const user = await signinUser({ ...this.state });
+      this.props.signInDispatch(user)
+      this.props.validSignIn(false);
+    } catch (error) {
+      this.props.invalidSignIn(error.message);
+    }
   };
 
   render() {
@@ -62,7 +62,9 @@ export class SignIn extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  signInDispatch: (user) => dispatch(signInAction(user))
+  signInDispatch: (user) => dispatch(signInAction(user)),
+  invalidSignIn: (error) => dispatch(invalidSignIn(error)),
+  validSignIn: (valid) => dispatch(validSignIn(valid))
 })
 
 export default withRouter(connect(null, mapDispatchToProps)(SignIn));

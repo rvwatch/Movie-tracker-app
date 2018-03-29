@@ -14,6 +14,6 @@ export const signinUser = async ({email, password}) => {
     console.table(user)
     return user.data;
   } catch (errs) {
-    throw new Error(errs.message);
+    throw new Error('Email and Password do not match');
   }
 };

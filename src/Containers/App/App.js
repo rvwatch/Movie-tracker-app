@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Router, Route, NavLink, withRouter } from 'react-router-dom';
+import { Router, Route, NavLink, withRouter, Redirect } from 'react-router-dom';
 import { getMovies } from '../../ApiCalls/getMovies';
 import * as Actions from '../../Actions';
 import CardContainer from '../CardContainer/CardContainer';
@@ -18,26 +18,30 @@ export class App extends Component {
 
   render() {
     return (
+      <div>
       <Route path='/' render={() => {
         return (
-        <main className="App">
-          <header>
-            {!this.props.user.name && 
-            <div>
-              <NavLink to="/signIn">Login / SignUp</NavLink>
-              <Login />
-            </div>}
-          </header>
-          <CardContainer />
-        </main>
+          <main className="App">
+            <header>
+              {!this.props.user.name && 
+              <div>
+                <NavLink to="/signIn">Login / SignUp</NavLink>
+                <Login />
+              </div>}
+              {typeof this.props.error === 'string' && <h6>{this.props.error}</h6>}
+            </header>
+            <CardContainer />
+          </main>
         )
       }}/>
+      </div>
     );
   }
 }
 
 export const mapStateToProps = state => ({
-  user: state.user
+  user: state.user,
+  error: state.error
 })
 
 export const mapDispatchToProps = dispatch => ({

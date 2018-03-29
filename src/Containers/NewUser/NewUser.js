@@ -23,11 +23,9 @@ export class NewUser extends Component {
   };
 
   handleSubmit = async (event) => {
-    event.preventDefault();
     const { name, email } = this.state
     const id = await addNewUser({ ...this.state });
     this.props.postNewUser({name, email, id});
-    this.setState({ name: '', email: '', password: '' });
   };
 
   render() {
@@ -61,7 +59,7 @@ export class NewUser extends Component {
             onChange={this.handleInput}
           />
         </label>
-        <NavLink to='/'>
+        <NavLink to='/' onClick={this.handleSubmit}>
           <button>Submit</button>
         </NavLink>
       </form>
