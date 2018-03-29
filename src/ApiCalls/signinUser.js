@@ -10,9 +10,10 @@ export const signinUser = async ({email, password}) => {
         'Content-Type': 'application/json'
       }
     });
-    const data = await response.json();
-    return data;
+    const user = await response.json();
+    console.table(user)
+    return user.data;
   } catch (errs) {
-    console.log(errs.message);
+    throw new Error(errs.message);
   }
 };

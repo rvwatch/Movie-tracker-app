@@ -18,19 +18,30 @@ export class App extends Component {
 
   render() {
     return (
-      <main className="App">
-        <header>
-          <NavLink to="/signIn">Login / SignUp</NavLink>
-          <Login />
-        </header>
-        <CardContainer />
-      </main>
+      <Route path='/' render={() => {
+        return (
+        <main className="App">
+          <header>
+            {!this.props.user.name && 
+            <div>
+              <NavLink to="/signIn">Login / SignUp</NavLink>
+              <Login />
+            </div>}
+          </header>
+          <CardContainer />
+        </main>
+        )
+      }}/>
     );
   }
 }
+
+export const mapStateToProps = state => ({
+  user: state.user
+})
 
 export const mapDispatchToProps = dispatch => ({
   retrieveMovies: movies => dispatch(Actions.postMovies(movies))
 });
 
-export default withRouter(connect(null, mapDispatchToProps)(App));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

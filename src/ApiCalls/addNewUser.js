@@ -12,9 +12,8 @@ export const addNewUser = async ({name, email, password}) => {
       }
     });
     const data = await response.json();
-    console.log(data);
     return data.id;
   } catch (errs) {
-    console.log(errs.message);
+      throw new Error(errs.message);
   }
 };

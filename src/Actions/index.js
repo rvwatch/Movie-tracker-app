@@ -6,4 +6,9 @@ export const postMovies = movies => ({
 export const addUser = user => ({
   type: 'ADD_USER',
   user
-})
+});
+
+export const signInAction = user => ({
+  type: 'SIGN_IN',
+  user
+});

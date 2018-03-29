@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addNewUser } from '../../ApiCalls/addNewUser';
 import * as Actions from '../../Actions';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 
 export class NewUser extends Component {
   constructor() {
@@ -61,7 +61,9 @@ export class NewUser extends Component {
             onChange={this.handleInput}
           />
         </label>
-        <button>Submit</button>
+        <NavLink to='/'>
+          <button>Submit</button>
+        </NavLink>
       </form>
     );
   }
@@ -71,4 +73,4 @@ const mapDispatchToProps = (dispatch) => ({
   postNewUser: (user) => dispatch(Actions.addUser(user))
 })
 
-export default connect(null, mapDispatchToProps)(NewUser);
+export default withRouter(connect(null, mapDispatchToProps)(NewUser));

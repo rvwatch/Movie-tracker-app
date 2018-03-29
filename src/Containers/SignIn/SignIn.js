@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signinUser } from '../../ApiCalls/signinUser';
-import { Route, NavLink } from 'react-router-dom';
+import { Route, NavLink, withRouter } from 'react-router-dom';
+import { signInAction } from '../../Actions';
 // const user = await signinUser();
 // console.table(user);
 
@@ -22,15 +23,17 @@ export class SignIn extends Component {
     });
   };
 
-  handleSubmit = event => {
+  handleSubmit = async (event) => {
     event.preventDefault();
-    signinUser({ ...this.state });
+    const user = await signinUser({ ...this.state });
+    console.log(user);
+    this.props.signInDispatch(user)
     this.setState({ email: '', password: '' });
   };
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form>
         <NavLink to="/new-user">Sign Up</NavLink>
         <label>
           <input
@@ -50,10 +53,16 @@ export class SignIn extends Component {
             value={this.state.password}
           />
         </label>
-        <button>Submit</button>
+        <NavLink to='/' onClick={this.handleSubmit}>
+          <button>Submit</button>
+        </NavLink>
       </form>
     );
   }
 }
 
-export default connect(null, null)(SignIn);
+const mapDispatchToProps = dispatch => ({
+  signInDispatch: (user) => dispatch(signInAction(user))
+})
+
+export default withRouter(connect(null, mapDispatchToProps)(SignIn));
