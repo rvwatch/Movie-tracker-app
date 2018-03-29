@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { signinUser } from '../../ApiCalls/signinUser';
+// const user = await signinUser();
+    // console.table(user);
 
 export class SignIn extends Component {
   constructor() {
@@ -18,9 +21,15 @@ export class SignIn extends Component {
     });
   };
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+    signinUser({...this.state});
+    this.setState({email: '', password: ''});
+  }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <label>
           <input
             type="email"

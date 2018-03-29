@@ -13,15 +13,13 @@ export class App extends Component {
   async componentDidMount() {
     const movies = await getMovies();
     this.props.retrieveMovies(movies);
-    const user = await signinUser();
-    // debugger;
-    console.table(user);
   }
 
   render() {
     return (
       <main className="App">
         <header>
+          <NavLink to='/login'>Login</NavLink>
           <Login />
         </header>
         <CardContainer />

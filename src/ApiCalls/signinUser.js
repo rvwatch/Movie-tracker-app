@@ -1,10 +1,11 @@
-export const signinUser = async () => {
+export const signinUser = async ({email, password}) => {
   console.log('ADDING!');
+  const lowerCaseEmail = email.toLowerCase();
 
   try {
-    const response = await fetch('api/users', {
+    const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({email: "tman2272@aol.com", password: "password"}), 
+      body: JSON.stringify({email: lowerCaseEmail, password}), 
       headers: {
         'Content-Type': 'application/json'
       }

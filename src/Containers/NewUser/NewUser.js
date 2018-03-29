@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { addNewUser } from '../../ApiCalls/addNewUser';
+
 
 export class NewUser extends Component {
   constructor() {
@@ -19,9 +21,15 @@ export class NewUser extends Component {
     });
   };
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+    addNewUser({...this.state})
+    this.setState({name: '', email: '', password: ''})
+  }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <label>
           <input
             type="text"
