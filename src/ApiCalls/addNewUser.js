@@ -1,8 +1,4 @@
 export const addNewUser = async ({name, email, password}) => {
-  // Default options are marked with *
-  console.log('ADDING!');
-  console.log(name, email, password)
-
   try {
     const response = await fetch('/api/users/new', {
       method: 'POST',
@@ -15,11 +11,9 @@ export const addNewUser = async ({name, email, password}) => {
         'Content-Type': 'application/json'
       }
     });
-    console.log(response);
-
-    // const data = await response.json();
-
-    // return data;
+    const data = await response.json();
+    console.log(data);
+    return data.id;
   } catch (errs) {
     console.log(errs.message);
   }

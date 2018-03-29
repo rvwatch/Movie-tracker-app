@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addNewUser } from '../../ApiCalls/addNewUser';
+import * as Actions from '../../Actions';
 import { NavLink } from 'react-router-dom';
 
 export class NewUser extends Component {
@@ -21,9 +22,11 @@ export class NewUser extends Component {
     });
   };
 
-  handleSubmit = event => {
+  handleSubmit = async (event) => {
     event.preventDefault();
-    addNewUser({ ...this.state });
+    const { name, email } = this.state
+    const id = await addNewUser({ ...this.state });
+    this.props.postNewUser({name, email, id});
     this.setState({ name: '', email: '', password: '' });
   };
 
@@ -64,4 +67,8 @@ export class NewUser extends Component {
   }
 }
 
-export default connect(null, null)(NewUser);
+const mapDispatchToProps = (dispatch) => ({
+  postNewUser: (user) => dispatch(Actions.addUser(user))
+})
+
+export default connect(null, mapDispatchToProps)(NewUser);
