@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Router, Route, NavLink } from 'react-router-dom';
+import { Router, Route, NavLink, withRouter } from 'react-router-dom';
 import { getMovies } from '../../ApiCalls/getMovies';
 import * as Actions from '../../Actions';
 import CardContainer from '../CardContainer/CardContainer';
@@ -20,7 +20,7 @@ export class App extends Component {
     return (
       <main className="App">
         <header>
-          <NavLink to='/signin'>Login / SignUp</NavLink>
+          <NavLink to="/signIn">Login / SignUp</NavLink>
           <Login />
         </header>
         <CardContainer />
@@ -33,4 +33,4 @@ export const mapDispatchToProps = dispatch => ({
   retrieveMovies: movies => dispatch(Actions.postMovies(movies))
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default withRouter(connect(null, mapDispatchToProps)(App));

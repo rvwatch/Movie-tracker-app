@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signinUser } from '../../ApiCalls/signinUser';
-import { Route } from 'react-router';
+import { Route, NavLink } from 'react-router-dom';
 // const user = await signinUser();
 // console.table(user);
 
@@ -22,15 +22,16 @@ export class SignIn extends Component {
     });
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
-    signinUser({...this.state});
-    this.setState({email: '', password: ''});
-  }
+    signinUser({ ...this.state });
+    this.setState({ email: '', password: '' });
+  };
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
+        <NavLink to="/new-user">Sign Up</NavLink>
         <label>
           <input
             type="email"
