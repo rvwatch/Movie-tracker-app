@@ -3,9 +3,19 @@ import { NewUser } from './NewUser';
 import { shallow } from 'enzyme';
 
 describe('Login', () => {
-
-  it('should match the snapshot', () => {
-    let wrapper = shallow(<NewUser />)
-    expect(wrapper).toMatchSnapshot()
+  let wrapper;
+  beforeEach(() => {
+    wrapper = shallow(<NewUser />);
   });
-})
+  it('should match the snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should update state on input change', () => {
+    const mockEvent = { target: { value: 'ahhhhh', name: 'name' } };
+    wrapper.instance().handleInput(mockEvent);
+    expect(wrapper.state('name')).toEqual('ahhhhh');
+  });
+
+  it('should ', () => {});
+});

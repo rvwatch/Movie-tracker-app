@@ -4,17 +4,26 @@ import { Router, Route, NavLink } from 'react-router-dom';
 import { getMovies } from '../../ApiCalls/getMovies';
 import * as Actions from '../../Actions';
 import CardContainer from '../CardContainer/CardContainer';
+import { Login } from '../../Components/Login/Login';
+import { addNewUser } from '../../ApiCalls/addNewUser';
+import { signinUser } from '../../ApiCalls/signinUser';
 import './App.css';
 
 export class App extends Component {
   async componentDidMount() {
     const movies = await getMovies();
     this.props.retrieveMovies(movies);
+    const user = await signinUser();
+    debugger;
+    console.table(user);
   }
 
   render() {
     return (
       <main className="App">
+        <header>
+          <Login />
+        </header>
         <CardContainer />
       </main>
     );
