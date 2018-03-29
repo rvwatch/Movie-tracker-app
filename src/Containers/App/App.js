@@ -14,7 +14,7 @@ export class App extends Component {
     const movies = await getMovies();
     this.props.retrieveMovies(movies);
     const user = await signinUser();
-    debugger;
+    // debugger;
     console.table(user);
   }
 
