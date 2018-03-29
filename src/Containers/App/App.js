@@ -7,6 +7,7 @@ import CardContainer from '../CardContainer/CardContainer';
 import { Login } from '../../Components/Login/Login';
 import { addNewUser } from '../../ApiCalls/addNewUser';
 import { signinUser } from '../../ApiCalls/signinUser';
+import { Signin } from '../SignIn/SignIn';
 import './App.css';
 
 export class App extends Component {
@@ -19,7 +20,7 @@ export class App extends Component {
     return (
       <main className="App">
         <header>
-          <NavLink to='/login'>Login</NavLink>
+          <NavLink to='/signin'>Login / SignUp</NavLink>
           <Login />
         </header>
         <CardContainer />

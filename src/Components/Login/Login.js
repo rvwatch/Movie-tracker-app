@@ -7,9 +7,17 @@ import { Switch, Router, Route, NavLink } from 'react-router-dom';
 export const Login = () => {
   return (
     <article>
-      <NewUser />
-
-      <SignIn />
+      <Switch>
+        <Route exact path='/signin' />
+        <Route 
+          exact path='/new-user'
+          render={() => <NewUser />}
+        />
+        <Route
+          exact path='/login'
+          render={() => <SignIn />}
+        />
+      </Switch>
     </article>
-  )
-}
+  );
+};

@@ -6,9 +6,9 @@ export const fetchData = async () => {
       `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}`
     );
     const data = await response.json();
-    return data.results
+    return data.results;
   } catch (error) {
-    throw new Error('error')
+    throw new Error('error');
   }
-} 
+};
 
