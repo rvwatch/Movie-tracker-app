@@ -28,7 +28,6 @@ export class SignIn extends Component {
       this.props.signInDispatch(user);
       this.props.validSignIn(false);
       const favoriteMovies = await getFavorites(user.id);
-      console.log('getfavorite response', favoriteMovies);
     } catch (error) {
       this.props.invalidSignIn(error.message);
     }
