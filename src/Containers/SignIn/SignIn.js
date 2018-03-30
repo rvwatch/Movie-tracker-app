@@ -65,6 +65,6 @@ const mapDispatchToProps = dispatch => ({
   signInDispatch: (user) => dispatch(signInAction(user)),
   invalidSignIn: (error) => dispatch(invalidSignIn(error)),
   validSignIn: (valid) => dispatch(validSignIn(valid))
-})
+});
 
 export default withRouter(connect(null, mapDispatchToProps)(SignIn));

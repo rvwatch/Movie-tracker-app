@@ -23,10 +23,15 @@ export class NewUser extends Component {
   };
 
   handleSubmit = async (event) => {
-    const { name, email } = this.state
-    const id = await addNewUser({ ...this.state });
-    this.props.postNewUser({name, email, id});
-  };
+    const { name, email } = this.state;
+    try {
+      const id = await addNewUser({ ...this.state });
+      this.props.postNewUser({name, email, id});
+      this.props.validSignIn(false);
+    } catch (error) {
+      this.props.invalidSignIn(error.message);
+    }
+  } 
 
   render() {
     return (
@@ -67,8 +72,10 @@ export class NewUser extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  postNewUser: (user) => dispatch(Actions.addUser(user))
-})
+const mapDispatchToProps = dispatch => ({
+  postNewUser: user => dispatch(Actions.addUser(user)),
+  invalidSignIn: error => dispatch(Actions.invalidSignIn(error)),
+  validSignIn: valid => dispatch(Actions.validSignIn(valid))
+});
 
 export default withRouter(connect(null, mapDispatchToProps)(NewUser));

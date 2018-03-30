@@ -19,21 +19,21 @@ export class App extends Component {
   render() {
     return (
       <div>
-      <Route path='/' render={() => {
-        return (
-          <main className="App">
-            <header>
-              {!this.props.user.name && 
+        <Route path='/' render={() => {
+          return (
+            <main className="App">
+              <header>
+                {!this.props.user.name && 
               <div>
                 <NavLink to="/signIn">Login / SignUp</NavLink>
                 <Login />
               </div>}
-              {typeof this.props.error === 'string' && <h6>{this.props.error}</h6>}
-            </header>
-            <CardContainer />
-          </main>
-        )
-      }}/>
+                {typeof this.props.error === 'string' && <h6>{this.props.error}</h6>}
+              </header>
+              <CardContainer />
+            </main>
+          );
+        }}/>
       </div>
     );
   }
@@ -42,7 +42,7 @@ export class App extends Component {
 export const mapStateToProps = state => ({
   user: state.user,
   error: state.error
-})
+});
 
 export const mapDispatchToProps = dispatch => ({
   retrieveMovies: movies => dispatch(Actions.postMovies(movies))
