@@ -26,7 +26,10 @@ export class App extends Component {
               <main className="App">
                 <header>
                   {this.props.user.name && (
-                    <button onClick={this.props.logout}>Logout</button>
+                    <div>
+                      <button onClick={this.props.logout}>Logout</button>
+                      <h1>Welcome: {this.props.user.name}</h1>
+                    </div>
                   )}
                   {!this.props.user.name && (
                     <div>

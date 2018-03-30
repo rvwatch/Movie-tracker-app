@@ -8,7 +8,6 @@ export const CardContainer = props => {
   });
   return (
     <section>
-      <h1>{props.user.name}</h1>
       {renderCards}
     </section>
   )
