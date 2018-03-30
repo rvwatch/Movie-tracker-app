@@ -1,12 +1,20 @@
 export const cleanMovies = movieData => {
   const cleanedMovies = movieData.map(movie => {
-    const { title, overview, release_date, vote_average, poster_path } = movie;
+    const { 
+      title, 
+      overview, 
+      release_date, 
+      vote_average, 
+      poster_path, 
+      popularity 
+    } = movie;
     return {
       title,
+      movie_id: popularity,
       overview: `Summary: ${overview}`,
-      date: `Release Date: ${release_date}`,
-      vote: `Rating: ${vote_average}`,
-      image: poster_path
+      release_date: `Release Date: ${release_date}`,
+      vote_average: `Rating: ${vote_average}`,
+      poster_path: poster_path
     };
   });
   return cleanedMovies;

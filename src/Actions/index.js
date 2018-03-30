@@ -23,6 +23,11 @@ export const invalidSignIn = error => ({
   error
 });
 
+export const promptSignIn = error => ({
+  type: 'PROMPT_SIGNIN',
+  error
+});
+
 export const logoutUser = () => ({
   type: 'LOGOUT_USER'
 });
@@ -32,7 +37,7 @@ export const addFavorite = (movie) => ({
   movie
 });
 
-export const removeFavorite = (movie) => ({
+export const removeFavorite = (id) => ({
   type: 'REMOVE_FAVORITE',
-  movie
+  id
 });

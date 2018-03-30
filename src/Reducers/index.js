@@ -2,13 +2,13 @@ import { combineReducers } from 'redux';
 import movies from './postMoviesReducer';
 import user from './usersReducer';
 import error from './errorReducer';
-import favorite from './favoritesReducer';
+import favorites from './favoritesReducer';
 
 const rootReducer = combineReducers({
   movies,
   user,
   error,
-  favorite
+  favorites
 });
 
 export default rootReducer;

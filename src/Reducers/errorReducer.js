@@ -4,6 +4,8 @@ const errorReducer = (state = false, action) => {
     return action.error;
   case 'VALID_SIGNIN':
     return action.error;
+  case 'PROMPT_SIGNIN':
+    return action.error;
   default:
     return state;
   }
