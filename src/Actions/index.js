@@ -41,3 +41,8 @@ export const removeFavorite = (id) => ({
   type: 'REMOVE_FAVORITE',
   id
 });
+
+export const addExistingFavs = favorites => ({ 
+  type: "GET_FAVORITES", 
+  favorites 
+});

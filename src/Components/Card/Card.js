@@ -20,11 +20,11 @@ const Card = ({
       const error = "Please Sign In to Add Favorites";
       promptSignin(error);
     } else if (!favorites.find(fav => fav.movie_id === movie.movie_id)) {
-      const id = await postToFavorites({ ...movie, user_id: user.id });
-      addFavorite({ ...movie, id });
+      await postToFavorites({ ...movie, user_id: user.id });
+      addFavorite( movie );
     } else {
       removeFavorite(movie.movie_id);
-      deleteFromFavorites(movie.movie_id, user.id);
+      deleteFromFavorites(movie.movie_id, user.id); 
     }
   };
 
