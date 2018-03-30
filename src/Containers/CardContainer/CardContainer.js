@@ -4,7 +4,7 @@ import Card from '../../Components/Card/Card';
 
 export const CardContainer = props => {
   const renderCards = props.movies.map(movie => {
-    return <Card key={movie.title} {...movie} />;
+    return <Card key={movie.title} movie={movie} />;
   });
   return (
     <section>

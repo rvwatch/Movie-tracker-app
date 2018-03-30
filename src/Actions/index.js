@@ -26,3 +26,13 @@ export const invalidSignIn = error => ({
 export const logoutUser = () => ({
   type: 'LOGOUT_USER'
 });
+
+export const addFavorite = (movie) => ({
+  type: 'ADD_FAVORITE',
+  movie
+});
+
+export const removeFavorite = (movie) => ({
+  type: 'REMOVE_FAVORITE',
+  movie
+});
