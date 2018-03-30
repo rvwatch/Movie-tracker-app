@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { signinUser } from '../../ApiCalls/signinUser';
 import { Route, NavLink, withRouter } from 'react-router-dom';
 import { signInAction, invalidSignIn, validSignIn } from '../../Actions';
+import { getFavorites } from '../../ApiCalls/getFavorites';
 
 export class SignIn extends Component {
   constructor() {
@@ -22,10 +23,12 @@ export class SignIn extends Component {
   };
 
   handleSubmit = async (event) => {
-    try{
+    try {
       const user = await signinUser({ ...this.state });
-      this.props.signInDispatch(user)
+      this.props.signInDispatch(user);
       this.props.validSignIn(false);
+      const favoriteMovies = await getFavorites(user.id);
+      console.log('getfavorite response', favoriteMovies);
     } catch (error) {
       this.props.invalidSignIn(error.message);
     }
