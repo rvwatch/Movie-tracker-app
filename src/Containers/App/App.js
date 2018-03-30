@@ -19,21 +19,30 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <Route path='/' render={() => {
-          return (
-            <main className="App">
-              <header>
-                {!this.props.user.name && 
-              <div>
-                <NavLink to="/signIn">Login / SignUp</NavLink>
-                <Login />
-              </div>}
-                {typeof this.props.error === 'string' && <h6>{this.props.error}</h6>}
-              </header>
-              <CardContainer />
-            </main>
-          );
-        }}/>
+        <Route
+          path="/"
+          render={() => {
+            return (
+              <main className="App">
+                <header>
+                  {this.props.user.name && (
+                    <button onClick={this.props.logout}>Logout</button>
+                  )}
+                  {!this.props.user.name && (
+                    <div>
+                      <NavLink to="/signIn">Login / SignUp</NavLink>
+                      <Login />
+                    </div>
+                  )}
+                  {typeof this.props.error === 'string' && (
+                    <h6>{this.props.error}</h6>
+                  )}
+                </header>
+                <CardContainer />
+              </main>
+            );
+          }}
+        />
       </div>
     );
   }
@@ -45,7 +54,8 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  retrieveMovies: movies => dispatch(Actions.postMovies(movies))
+  retrieveMovies: movies => dispatch(Actions.postMovies(movies)),
+  logout: () => dispatch(Actions.logoutUser())
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
