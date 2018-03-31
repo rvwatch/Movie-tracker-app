@@ -30,9 +30,9 @@ export const cleanedMovie = [
 
 export const mockUser = {
   id: '5',
-  name: "m",
-  email: "m@m.m",
-  password: "m"
+  name: "r",
+  email: "r@r.r",
+  password: "r"
 };
 
 export const mockFavorite = {
