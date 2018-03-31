@@ -1,9 +1,9 @@
 const postMoviesReducer = (state = [], action) => {
   switch (action.type) {
-    case 'POST_MOVIES':
-      return [...state, ...action.movies];
-    default:
-      return state;
+  case 'POST_MOVIES':
+    return [...state, ...action.movies];
+  default:
+    return state;
   }
 };
 
