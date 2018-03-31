@@ -39,5 +39,5 @@ describe("addNewUser", () => {
     const expected = new Error('error');
 
     await expect(getFavorites(id)).rejects.toEqual(expected);
-  });
+  });{}
 });
