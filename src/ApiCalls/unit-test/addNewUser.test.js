@@ -11,8 +11,8 @@ describe('addNewUser', () => {
         })
     }));
   });
-  it('should add a new user to the database', async () => {
-    window.fetch = jest.fn().mockImplementation;
-    await addNewUser(mock.user);
-  });
+  // it('should add a new user to the database', async () => {
+  //   window.fetch = jest.fn().mockImplementation;
+  //   await addNewUser(mock.user);
+  // });
 });
