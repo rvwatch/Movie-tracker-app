@@ -7,6 +7,7 @@ describe('postMoviesReducer', () => {
     const expected = [];
     expect(postMoviesReducer(undefined, {})).toEqual(expected);
   });
+  
   it('should add movies to state', () => {
     const expected = mock.cleanedMovie;
     const movies = mock.cleanedMovie;
