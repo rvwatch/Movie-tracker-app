@@ -11,8 +11,18 @@ describe('addNewUser', () => {
         })
     }));
   });
-  // it('should add a new user to the database', async () => {
-  //   window.fetch = jest.fn().mockImplementation;
-  //   await addNewUser(mock.user);
-  // });
+
+  it('should add a new user to the database', async () => {
+    window.fetch = jest.fn().mockImplementation;
+    await addNewUser(mock.mockUser);
+  });
+
+  it('should return a message if the email already exists', () => {
+
+  });
+
+  it('should throw an error if a new user cannot be created', () => {
+
+  });
+
 });

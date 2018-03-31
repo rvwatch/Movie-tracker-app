@@ -29,9 +29,10 @@ export const cleanedMovie = [
 ];
 
 export const mockUser = {
-  name: "r",
-  email: "r@r.r",
-  password: "r"
+  id: '5',
+  name: "m",
+  email: "m@m.m",
+  password: "m"
 };
 
 export const mockFavorite = {
