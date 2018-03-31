@@ -5,7 +5,7 @@ import { getMovies } from "../../ApiCalls/getMovies";
 import * as Actions from "../../Actions";
 import CardContainer from "../CardContainer/CardContainer";
 import { Login } from "../../Components/Login/Login";
-import { addNewUser } from "../../ApiCalls/addNewUser";
+import { getFavorites } from "../../ApiCalls/getFavorites";
 import { signinUser } from "../../ApiCalls/signinUser";
 import { Signin } from "../SignIn/SignIn";
 import "./App.css";
@@ -14,6 +14,33 @@ export class App extends Component {
   async componentDidMount() {
     const movies = await getMovies();
     this.props.retrieveMovies(movies);
+    if (localStorage.getItem('lastUser')) {
+      const user = this.getLastUser();
+      this.props.signIn(user);
+      const favorites = await getFavorites(user.id);
+      this.props.addFavorites(favorites.data);
+    }
+  }
+
+  componentDidUpdate() {
+    this.saveUser(this.props.user);
+  }
+
+  getLastUser = () => {
+    const stringed = localStorage.getItem('lastUser');
+    return JSON.parse(stringed);
+  }
+
+  saveUser = (user) => {
+    if(user.name) {
+      const stringed = JSON.stringify(user);
+      localStorage.setItem('lastUser', stringed);
+    }
+  }
+
+  handleLogout = () => {
+    localStorage.removeItem('lastUser');
+    this.props.logout()
   }
 
   render() {
@@ -27,7 +54,7 @@ export class App extends Component {
                 <header>
                   {this.props.user.name && (
                     <div>
-                      <button onClick={this.props.logout}>Logout</button>
+                      <button onClick={this.handleLogout}>Logout</button>
                       {this.props.location.pathname === "/" && (
                         <NavLink to="/favorites">View Favorites</NavLink>
                       )}
@@ -64,7 +91,9 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   retrieveMovies: movies => dispatch(Actions.postMovies(movies)),
-  logout: () => dispatch(Actions.logoutUser())
+  logout: () => dispatch(Actions.logoutUser()),
+  signIn: user => dispatch(Actions.signInAction(user)),
+  addFavorites: favorites => dispatch(Actions.addExistingFavs(favorites))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
