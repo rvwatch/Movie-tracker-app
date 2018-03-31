@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 import { postToFavorites } from "../../ApiCalls/postToFavorites";
 import * as Actions from "../../Actions/";
@@ -11,7 +12,8 @@ const Card = ({
   favorites,
   promptSignin,
   addFavorite,
-  removeFavorite
+  removeFavorite,
+  movieType
 }) => {
   const { title, overview, release_date, vote_average, poster_path } = movie;
 
@@ -36,9 +38,7 @@ const Card = ({
       }}
     >
       <h1>{title}</h1>
-      <h3>{release_date}</h3>
-      <p>{vote_average}</p>
-      <p>{overview}</p>
+      <Link to={`/${movieType}/${movie.movie_id}`}>Show More</Link>
       <button onClick={() => toggleFavorite(movie)}>Favorite</button>
     </article>
   );

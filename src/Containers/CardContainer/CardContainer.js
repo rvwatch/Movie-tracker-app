@@ -1,16 +1,35 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { Route, Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import Card from "../../Components/Card/Card";
+import SingleMovie from '../../Components/SingleMovie/SingleMovie';
 
 export const CardContainer = props => {
   const movieType =
     props.location.pathname === "/favorites" ? 'favorites' : 'movies';
 
   const renderCards = props[movieType].map(movie => {
-    return <Card key={movie.title} movie={movie} />;
+    return <Card key={movie.title} movie={movie} movieType={movieType}/>
   });
-  return <section>{renderCards}</section>;
+
+  return (
+    <section>
+      <Route exact path='/' render={({match}) => {
+        return <div>{renderCards}</div>
+      }}/>
+      <Route exact path='/favorites' render={({match}) => {
+        return <div>{renderCards}</div>
+      }}/>
+      <Route exact path='/movies/:id' render={({match}) => {
+        const movie = props.movies.find(movie => parseInt(match.params.id) === movie.movie_id)
+        return <SingleMovie movie={movie} lastPath=''/>
+      }}/>
+      <Route exact path='/favorites/:id' render={({match}) => {
+        const movie = props.favorites.find(movie => parseInt(match.params.id) === movie.movie_id)
+        return <SingleMovie movie={movie} lastPath='favorites'/>
+      }}/>
+    </section>
+  )
 };
 
 export const mapStateToProps = state => ({
