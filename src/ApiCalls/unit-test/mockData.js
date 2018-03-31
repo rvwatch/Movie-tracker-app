@@ -27,3 +27,9 @@ export const cleanedMovie = [
     vote: 'Rating: 6.5'
   }
 ];
+
+export const mockUser = {
+  name: 'r',
+  email: 'r@r.r',
+  password: 'r'
+};
