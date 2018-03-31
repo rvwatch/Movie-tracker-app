@@ -9,6 +9,7 @@ describe('getMovies', () => {
     await getMovies();
     expect(fetchData).toHaveBeenCalled();
   });
+  
   it('should call cleanMovies', async () => {
     await getMovies();
     expect(cleanMovies).toHaveBeenCalled();

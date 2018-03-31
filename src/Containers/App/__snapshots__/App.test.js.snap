@@ -19,20 +19,25 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <Connect(Component) />,
-      "className": "App",
+      "children": <Route
+        path="/"
+        render={[Function]}
+/>,
     },
     "ref": null,
     "rendered": Object {
       "instance": null,
       "key": undefined,
       "nodeType": "class",
-      "props": Object {},
+      "props": Object {
+        "path": "/",
+        "render": [Function],
+      },
       "ref": null,
       "rendered": null,
       "type": [Function],
     },
-    "type": "main",
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -40,20 +45,25 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <Connect(Component) />,
-        "className": "App",
+        "children": <Route
+          path="/"
+          render={[Function]}
+/>,
       },
       "ref": null,
       "rendered": Object {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {},
+        "props": Object {
+          "path": "/",
+          "render": [Function],
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
       },
-      "type": "main",
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {
