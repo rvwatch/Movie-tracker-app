@@ -1,4 +1,4 @@
-export const deleteFromFavorites = async (movieid, userid) => {
+const deleteFromFavorites = async (movieid, userid) => {
   try {
     await fetch(`api/users/${userid}/favorites/${movieid}`, {
       method: 'DELETE'
@@ -7,3 +7,5 @@ export const deleteFromFavorites = async (movieid, userid) => {
     throw new Error(error.message);
   }
 };
+
+export default deleteFromFavorites;
