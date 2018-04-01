@@ -4,6 +4,7 @@ import { postToFavorites } from "../../ApiCalls/postToFavorites";
 import * as Actions from "../../Actions/";
 import { deleteFromFavorites } from "../../ApiCalls/deleteFromFavorites";
 import "./Card.css";
+import PropTypes from 'prop-types';
 
 const Card = ({
   movie,
@@ -54,5 +55,14 @@ export const mapDispatchToProps = dispatch => ({
   removeFavorite: id => dispatch(Actions.removeFavorite(id)),
   promptSignin: error => dispatch(Actions.promptSignIn(error))
 });
+
+Card.propTypes = {
+  movie: PropTypes.object,
+  user: PropTypes.object,
+  favorites: PropTypes.array,
+  promptSignin: PropTypes.func,
+  addFavorite: PropTypes.func,
+  removeFavorite: PropTypes.func
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card);
