@@ -12,12 +12,22 @@ describe("postToFavorites", () => {
     }));
   });
 
-  it("should call fetch with the correct params", async () => {
-
+  it("should call fetch with the correct params", async() => {
+    const url = `api/users/favorites/new`;
+    const movie = mock.movieInfo;
+    const fetchObject = {
+      method: 'POST',
+      body: JSON.stringify(mock.movieInfo), 
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    await postToFavorites(mock.movieInfo);
+    expect(window.fetch).toHaveBeenCalledWith(url, fetchObject);
   });
 
-  it("should return a favId if the fetch is successful", () => {
-
+  it("should return a favId if the fetch is successful", async () => {
+    // await expect(postToFavorites(mock.movieData)).resolves.toEqual({})
   });
 
   it("should throw an error if failed to fetch", () => {

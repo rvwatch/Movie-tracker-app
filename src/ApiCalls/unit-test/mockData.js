@@ -28,8 +28,18 @@ export const cleanedMovie = [
   }
 ];
 
+export const movieInfo = {
+  movie_id: '1',
+  user_id: '24',
+  title: 'hello',
+  poster_path: '/hello',
+  release_date: '04-01-18',
+  vote_average: '-5',
+  overview: 'Its not real'
+};
+
 export const mockUser = {
-  id: '5',
+  id: "5",
   name: "r",
   email: "r@r.r",
   password: "r"
@@ -45,21 +55,22 @@ export const mockFavorite = {
   vote: "Rating: 6.5"
 };
 
-export const mockFavoritesArray = [{
-  date: "Release Date: 2018-10-5",
-  id: 10,
-  image: "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
-  overview:
-      "Summary: The tables are turned as four teenagers.",
-  title: "Fantastic Fours",
-  vote: "Rating: 2.5"
-},
-{
-  date: "Release Date: 2017-12-09",
-  id: 101.350698,
-  image: "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
-  overview:
+export const mockFavoritesArray = [
+  {
+    date: "Release Date: 2018-10-5",
+    id: 10,
+    image: "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
+    overview: "Summary: The tables are turned as four teenagers.",
+    title: "Fantastic Fours",
+    vote: "Rating: 2.5"
+  },
+  {
+    date: "Release Date: 2017-12-09",
+    id: 101.350698,
+    image: "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
+    overview:
       "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
-  title: "Jumanji: Welcome to the Jungle",
-  vote: "Rating: 6.5"
-}];
+    title: "Jumanji: Welcome to the Jungle",
+    vote: "Rating: 6.5"
+  }
+];
