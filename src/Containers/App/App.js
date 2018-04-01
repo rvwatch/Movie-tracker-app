@@ -8,6 +8,7 @@ import { Login } from "../../Components/Login/Login";
 import { getFavorites } from "../../ApiCalls/getFavorites";
 import { signinUser } from "../../ApiCalls/signinUser";
 import { Signin } from "../SignIn/SignIn";
+import PropTypes from 'prop-types';
 import "./App.css";
 
 export class App extends Component {
@@ -32,7 +33,7 @@ export class App extends Component {
   }
 
   saveUser = (user) => {
-    if(user.name) {
+    if (user.name) {
       const stringed = JSON.stringify(user);
       localStorage.setItem('lastUser', stringed);
     }
@@ -40,7 +41,7 @@ export class App extends Component {
 
   handleLogout = () => {
     localStorage.removeItem('lastUser');
-    this.props.logout()
+    this.props.logout();
   }
 
   render() {
@@ -95,5 +96,15 @@ export const mapDispatchToProps = dispatch => ({
   signIn: user => dispatch(Actions.signInAction(user)),
   addFavorites: favorites => dispatch(Actions.addExistingFavs(favorites))
 });
+
+App.propTypes = {
+  retrieveMovies: PropTypes.func,
+  signIn: PropTypes.func,
+  addFavorites: PropTypes.func,
+  user: PropTypes.object,
+  logout: PropTypes.func,
+  location: PropTypes.object,
+  error: PropTypes.object
+};
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
