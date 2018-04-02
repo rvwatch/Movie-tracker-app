@@ -42,6 +42,7 @@ export class App extends Component {
   handleLogout = () => {
     localStorage.removeItem('lastUser');
     this.props.logout();
+    this.props.history.push('/');
   }
 
   render() {
