@@ -2,8 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signinUser } from '../../ApiCalls/signinUser';
 import { Route, NavLink, withRouter } from 'react-router-dom';
-import { signInAction, invalidSignIn, validSignIn, addExistingFavs } from '../../Actions';
+import {
+  signInAction,
+  invalidSignIn,
+  validSignIn,
+  addExistingFavs
+} from '../../Actions';
 import { getFavorites } from '../../ApiCalls/getFavorites';
+import PropTypes from 'prop-types';
 
 export class SignIn extends Component {
   constructor() {
@@ -22,7 +28,7 @@ export class SignIn extends Component {
     });
   };
 
-  handleSubmit = async (event) => {
+  handleSubmit = async () => {
     try {
       const user = await signinUser({ ...this.state });
       this.props.signInDispatch(user);
@@ -56,7 +62,7 @@ export class SignIn extends Component {
             value={this.state.password}
           />
         </label>
-        <NavLink to='/' onClick={this.handleSubmit}>
+        <NavLink to="/" onClick={this.handleSubmit}>
           <button>Submit</button>
         </NavLink>
       </form>
@@ -70,5 +76,13 @@ const mapDispatchToProps = dispatch => ({
   validSignIn: valid => dispatch(validSignIn(valid)),
   addExistingFavs: existingFavs => dispatch(addExistingFavs(existingFavs))
 });
+
+SignIn.propTypes = {
+  signInDispatch: PropTypes.func,
+  invalidSignIn: PropTypes.func,
+  validSignIn: PropTypes.func,
+  promptSignin: PropTypes.func,
+  addExistingFavs: PropTypes.func
+};
 
 export default withRouter(connect(null, mapDispatchToProps)(SignIn));

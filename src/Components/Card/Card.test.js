@@ -12,8 +12,8 @@ describe('Card', () => {
         "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
       title: 'Jumanji: Welcome to the Jungle',
       vote: 'Rating: 6.5'
-    }
-    const wrapper = shallow(<Card {...mockMovie}/>)
+    };
+    const wrapper = shallow(<Card {...mockMovie}/>);
     expect(wrapper).toMatchSnapshot();
-  })
-})
+  });
+});

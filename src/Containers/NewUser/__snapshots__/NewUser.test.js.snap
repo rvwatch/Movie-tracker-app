@@ -18,6 +18,13 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          to="/signIn"
+>
+          Login
+</NavLink>,
         <label>
           <input
                     name="name"
@@ -45,13 +52,35 @@ ShallowWrapper {
                     value=""
           />
 </label>,
-        <button>
-          Submit
-</button>,
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          onClick={[Function]}
+          to="/"
+>
+          <button>
+                    Submit
+          </button>
+</NavLink>,
       ],
+      "onSubmit": [Function],
     },
     "ref": null,
     "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "activeClassName": "active",
+          "ariaCurrent": "true",
+          "children": "Login",
+          "to": "/signIn",
+        },
+        "ref": null,
+        "rendered": "Login",
+        "type": [Function],
+      },
       Object {
         "instance": null,
         "key": undefined,
@@ -148,13 +177,29 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "function",
         "props": Object {
-          "children": "Submit",
+          "activeClassName": "active",
+          "ariaCurrent": "true",
+          "children": <button>
+            Submit
+</button>,
+          "onClick": [Function],
+          "to": "/",
         },
         "ref": null,
-        "rendered": "Submit",
-        "type": "button",
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Submit",
+          },
+          "ref": null,
+          "rendered": "Submit",
+          "type": "button",
+        },
+        "type": [Function],
       },
     ],
     "type": "form",
@@ -166,6 +211,13 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            to="/signIn"
+>
+            Login
+</NavLink>,
           <label>
             <input
                         name="name"
@@ -193,13 +245,35 @@ ShallowWrapper {
                         value=""
             />
 </label>,
-          <button>
-            Submit
-</button>,
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            onClick={[Function]}
+            to="/"
+>
+            <button>
+                        Submit
+            </button>
+</NavLink>,
         ],
+        "onSubmit": [Function],
       },
       "ref": null,
       "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": "Login",
+            "to": "/signIn",
+          },
+          "ref": null,
+          "rendered": "Login",
+          "type": [Function],
+        },
         Object {
           "instance": null,
           "key": undefined,
@@ -296,13 +370,29 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "function",
           "props": Object {
-            "children": "Submit",
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": <button>
+              Submit
+</button>,
+            "onClick": [Function],
+            "to": "/",
           },
           "ref": null,
-          "rendered": "Submit",
-          "type": "button",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Submit",
+            },
+            "ref": null,
+            "rendered": "Submit",
+            "type": "button",
+          },
+          "type": [Function],
         },
       ],
       "type": "form",

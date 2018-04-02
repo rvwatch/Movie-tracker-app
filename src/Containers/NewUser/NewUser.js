@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addNewUser } from '../../ApiCalls/addNewUser';
 import * as Actions from '../../Actions';
 import { NavLink, withRouter } from 'react-router-dom';
+import PropTypes from "prop-types";
 
 export class NewUser extends Component {
   constructor() {
@@ -77,5 +78,11 @@ const mapDispatchToProps = dispatch => ({
   invalidSignIn: error => dispatch(Actions.invalidSignIn(error)),
   validSignIn: valid => dispatch(Actions.validSignIn(valid))
 });
+
+NewUser.propTypes = {
+  postNewUser: PropTypes.func,
+  invalidSignIn: PropTypes.func,
+  validSignIn: PropTypes.func
+};
 
 export default withRouter(connect(null, mapDispatchToProps)(NewUser));

@@ -7,3 +7,5 @@ export const deleteFromFavorites = async (movieid, userid) => {
     throw new Error(error.message);
   }
 };
+
+export default deleteFromFavorites;

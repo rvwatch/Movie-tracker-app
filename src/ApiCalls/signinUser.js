@@ -1,5 +1,4 @@
 export const signinUser = async ({email, password}) => {
-  console.log('ADDING!');
   const lowerCaseEmail = email.toLowerCase();
 
   try {
@@ -11,7 +10,6 @@ export const signinUser = async ({email, password}) => {
       }
     });
     const user = await response.json();
-    console.table(user)
     return user.data;
   } catch (errs) {
     throw new Error('Email and Password do not match');
