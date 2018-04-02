@@ -1,4 +1,4 @@
-const deleteFromFavorites = async (movieid, userid) => {
+export const deleteFromFavorites = async (movieid, userid) => {
   try {
     await fetch(`api/users/${userid}/favorites/${movieid}`, {
       method: 'DELETE'
