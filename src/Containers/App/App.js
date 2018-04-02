@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Router, Route, NavLink, withRouter, Redirect } from 'react-router-dom';
-import { getMovies } from '../../ApiCalls/getMovies';
-import * as Actions from '../../Actions';
-import CardContainer from '../CardContainer/CardContainer';
-import { Login } from '../../Components/Login/Login';
-import { addNewUser } from '../../ApiCalls/addNewUser';
-import { signinUser } from '../../ApiCalls/signinUser';
-import { Signin } from '../SignIn/SignIn';
-import './App.css';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Router, Route, NavLink, withRouter, Redirect } from "react-router-dom";
+import { getMovies } from "../../ApiCalls/getMovies";
+import * as Actions from "../../Actions";
+import CardContainer from "../CardContainer/CardContainer";
+import { Login } from "../../Components/Login/Login";
+import { addNewUser } from "../../ApiCalls/addNewUser";
+import { signinUser } from "../../ApiCalls/signinUser";
+import { Signin } from "../SignIn/SignIn";
+import "./App.css";
 
 export class App extends Component {
   async componentDidMount() {
@@ -28,6 +28,12 @@ export class App extends Component {
                   {this.props.user.name && (
                     <div>
                       <button onClick={this.props.logout}>Logout</button>
+                      {this.props.location.pathname === "/" && (
+                        <NavLink to="/favorites">View Favorites</NavLink>
+                      )}
+                      {this.props.location.pathname === "/favorites" && (
+                        <NavLink to="/">View All</NavLink>
+                      )}
                       <h1>Welcome: {this.props.user.name}</h1>
                     </div>
                   )}
@@ -37,7 +43,7 @@ export class App extends Component {
                       <Login />
                     </div>
                   )}
-                  {typeof this.props.error === 'string' && (
+                  {typeof this.props.error === "string" && (
                     <h6>{this.props.error}</h6>
                   )}
                 </header>

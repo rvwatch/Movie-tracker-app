@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signinUser } from '../../ApiCalls/signinUser';
 import { Route, NavLink, withRouter } from 'react-router-dom';
-import { signInAction, invalidSignIn, validSignIn } from '../../Actions';
+import { signInAction, invalidSignIn, validSignIn, addExistingFavs } from '../../Actions';
+import { getFavorites } from '../../ApiCalls/getFavorites';
 
 export class SignIn extends Component {
   constructor() {
@@ -22,10 +23,12 @@ export class SignIn extends Component {
   };
 
   handleSubmit = async (event) => {
-    try{
+    try {
       const user = await signinUser({ ...this.state });
-      this.props.signInDispatch(user)
+      this.props.signInDispatch(user);
       this.props.validSignIn(false);
+      const existingFavs = await getFavorites(user.id);
+      this.props.addExistingFavs(existingFavs.data);
     } catch (error) {
       this.props.invalidSignIn(error.message);
     }
@@ -62,9 +65,10 @@ export class SignIn extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  signInDispatch: (user) => dispatch(signInAction(user)),
-  invalidSignIn: (error) => dispatch(invalidSignIn(error)),
-  validSignIn: (valid) => dispatch(validSignIn(valid))
+  signInDispatch: user => dispatch(signInAction(user)),
+  invalidSignIn: error => dispatch(invalidSignIn(error)),
+  validSignIn: valid => dispatch(validSignIn(valid)),
+  addExistingFavs: existingFavs => dispatch(addExistingFavs(existingFavs))
 });
 
 export default withRouter(connect(null, mapDispatchToProps)(SignIn));

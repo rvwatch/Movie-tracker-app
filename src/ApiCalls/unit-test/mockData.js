@@ -19,6 +19,7 @@ export const mockMovieData = {
 export const cleanedMovie = [
   {
     date: 'Release Date: 2017-12-09',
+    id: 101.350698,
     image: '/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg',
     overview:
       "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
