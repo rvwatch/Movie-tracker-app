@@ -1,9 +1,10 @@
-import React from "react";
-import { Link, withRouter } from "react-router-dom";
-import { connect } from "react-redux";
-import { postToFavorites } from "../../ApiCalls/postToFavorites";
-import * as Actions from "../../Actions/";
-import { deleteFromFavorites } from "../../ApiCalls/deleteFromFavorites";
+import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { postToFavorites } from '../../ApiCalls/postToFavorites';
+import * as Actions from '../../Actions/';
+import { deleteFromFavorites } from '../../ApiCalls/deleteFromFavorites';
+import './SingleMovie.css';
 
 export const SingleMovie = props => {
   const {
@@ -16,7 +17,7 @@ export const SingleMovie = props => {
 
   const toggleFavorite = async movie => {
     if (!props.user.name) {
-      const error = "Please Sign In to Add Favorites";
+      const error = 'Please Sign In to Add Favorites';
       props.promptSignin(error);
     } else if (!props.favorites.find(fav => fav.movie_id === movie.movie_id)) {
       await postToFavorites({ ...movie, user_id: props.user.id });
@@ -30,12 +31,15 @@ export const SingleMovie = props => {
   return (
     <article className="single-card">
       <h1>{title}</h1>
-      <img src={`https://image.tmdb.org/t/p/w500/${poster_path}`} />
+      <img
+        className="movie-poster"
+        src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+      />
       <h3>{release_date}</h3>
       <p>{vote_average}</p>
-      <p>{overview}</p>
-      <Link to={`/${props.lastPath}`}>
-        <button>Back</button>
+      <p className="overview">{overview}</p>
+      <Link className="close" to={`/${props.lastPath}`}>
+        x
       </Link>
     </article>
   );

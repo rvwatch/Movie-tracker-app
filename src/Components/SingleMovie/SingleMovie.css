@@ -1,0 +1,27 @@
+.single-card {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  width: 100%;
+}
+
+.movie-poster {
+  height: 600px;
+}
+
+.overview {
+  width: 500px;
+  margin: auto;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30%;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
