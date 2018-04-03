@@ -5,8 +5,7 @@ export const cleanMovies = movieData => {
       overview,
       release_date,
       vote_average,
-      poster_path,
-      popularity
+      poster_path
     } = movie;
     return {
       title,

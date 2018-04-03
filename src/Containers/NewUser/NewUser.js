@@ -23,7 +23,7 @@ export class NewUser extends Component {
     });
   };
 
-  handleSubmit = async event => {
+  handleSubmit = async () => {
     const { name, email } = this.state;
     try {
       const id = await addNewUser({ ...this.state });

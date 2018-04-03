@@ -1,7 +1,6 @@
 import { fetchData } from '../fetchData';
 import * as mockData from './mockData';
 describe('fetchData', () => {
-  let mockMovieData;
 
   beforeEach(() => {
     window.fetch = jest.fn().mockImplementation(() => ({

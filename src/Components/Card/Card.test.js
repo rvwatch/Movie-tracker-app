@@ -11,7 +11,6 @@ jest.mock('../../ApiCalls/deleteFromFavorites');
 describe('Card', () => {
   let wrapper;
   let mockMovie;
-  let toggleFavorite;
   let user;
   let favorites;
   let addFavorite;
@@ -25,7 +24,6 @@ describe('Card', () => {
     addFavorite = jest.fn();
     mockFav = mock.mockRemainingFavorite;
     favorites = mock.mockFavoritesArray;
-    toggleFavorite = jest.fn();
     mockMovie = mock.movieInfo;
     wrapper = shallow(
       <Card
@@ -42,9 +40,11 @@ describe('Card', () => {
   });
 
   describe('toggleFavorite', () => {
+    
     beforeEach(() => {
       wrapper.find('button').simulate('click');
     });
+
     it('should call postToFavorites', () => {
       const expected = { ...mockMovie, user_id: user.id };
       expect(postToFavorites).toHaveBeenCalledWith(expected);

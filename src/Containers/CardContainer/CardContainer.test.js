@@ -28,14 +28,24 @@ describe('CardContainer', () => {
 
   it('should match the snapshot on /favorites/:id', () => {
     const favSingle = createLocation('/favorites/4');
-    const wrapper = shallow(<CardContainer location={favSingle} movies={mockMovies} favorites={mockFavs}/>
+    const wrapper = shallow(
+      <CardContainer 
+        location={favSingle} 
+        movies={mockMovies} 
+        favorites={mockFavs}
+      />
     );
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should match the snapshot on /movies/:id', () => {
     const movieSingle = createLocation('/movies/3');
-    const wrapper = shallow(<CardContainer location={movieSingle} movies={mockMovies} favorites={mockFavs}/>
+    const wrapper = shallow(
+      <CardContainer 
+        location={movieSingle} 
+        movies={mockMovies} 
+        favorites={mockFavs}
+      />
     );
     expect(wrapper).toMatchSnapshot();
   });
@@ -43,7 +53,7 @@ describe('CardContainer', () => {
 
 describe('mapStateToProps', () => {
   it('correctly maps movies to props', () => {
-    const mockMovies = mock.cleanedMovie
+    const mockMovies = mock.cleanedMovie;
     const expected = mockMovies;
     const mockState = { movies: mockMovies };
     const mapped = mapStateToProps(mockState);

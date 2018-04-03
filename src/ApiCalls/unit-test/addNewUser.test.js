@@ -1,5 +1,4 @@
 import { addNewUser } from '../addNewUser';
-import * as mock from './mockData';
 
 describe('addNewUser', () => {
   let user;
