@@ -17,7 +17,13 @@ export const Card = ({
   movieType,
   cardClass
 }) => {
-  const { title, overview, release_date, vote_average, poster_path } = movie;
+  const { 
+    title, 
+    overview, 
+    release_date, 
+    vote_average, 
+    poster_path 
+  } = movie;
 
   const toggleFavorite = async movie => {
     if (!user.name) {
