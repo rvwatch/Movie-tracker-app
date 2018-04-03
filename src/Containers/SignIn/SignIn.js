@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signinUser } from '../../ApiCalls/signinUser';
-import { Route, NavLink, withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import {
   signInAction,
   invalidSignIn,

@@ -42,7 +42,7 @@ describe("signinUser", () => {
         message: "Email and Password do not match"
       })
     );
-    const expected = new Error ('Email and Password do not match');
+    const expected = new Error('Email and Password do not match');
     await expect(signinUser(mock.mockUser)).rejects.toEqual(expected);
   });
 });

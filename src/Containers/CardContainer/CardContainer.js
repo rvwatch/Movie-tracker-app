@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link, withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Card from '../../Components/Card/Card';
 import PropTypes from 'prop-types';
@@ -30,7 +30,7 @@ export const CardContainer = props => {
         path="/movies/:id"
         render={({ match }) => {
           const movie = props.movies.find(
-            movie => parseInt(match.params.id) === movie.movie_id
+            movie => Number(match.params.id) === movie.movie_id
           );
           return <SingleMovie movie={movie} lastPath="" />;
         }}
@@ -38,14 +38,14 @@ export const CardContainer = props => {
       <Route
         exact
         path="/"
-        render={({ match }) => {
+        render={() => {
           return <div>{renderCards}</div>;
         }}
       />
       <Route
         exact
         path="/favorites"
-        render={({ match }) => {
+        render={() => {
           return <div>{renderCards}</div>;
         }}
       />
@@ -55,7 +55,7 @@ export const CardContainer = props => {
         path="/favorites/:id"
         render={({ match }) => {
           const movie = props.favorites.find(
-            movie => parseInt(match.params.id) === movie.movie_id
+            movie => Number(match.params.id) === movie.movie_id
           );
           return <SingleMovie movie={movie} lastPath="favorites" />;
         }}
@@ -71,7 +71,9 @@ export const mapStateToProps = state => ({
 });
 
 CardContainer.propTypes = {
-  location: PropTypes.object
+  location: PropTypes.object,
+  favorites: PropTypes.array,
+  movies: PropTypes.array
 };
 
 export default withRouter(connect(mapStateToProps)(CardContainer));

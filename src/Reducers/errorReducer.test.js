@@ -1,6 +1,5 @@
 import errorReducer from "./errorReducer";
 import { invalidSignIn, validSignIn, promptSignIn } from "../Actions";
-import * as mock from "../ApiCalls/unit-test/mockData";
 
 describe("errorReducer", () => {
   it("should return default state", () => {
