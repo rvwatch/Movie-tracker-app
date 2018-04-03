@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 import { postToFavorites } from '../../ApiCalls/postToFavorites';
 import * as Actions from '../../Actions/';
 import { deleteFromFavorites } from '../../ApiCalls/deleteFromFavorites';
+import PropTypes from 'prop-types'
 import './SingleMovie.css';
 
-export const SingleMovie = props => {
+const SingleMovie = props => {
   const {
     title,
     overview,
@@ -14,19 +15,6 @@ export const SingleMovie = props => {
     vote_average,
     poster_path
   } = props.movie;
-
-  const toggleFavorite = async movie => {
-    if (!props.user.name) {
-      const error = 'Please Sign In to Add Favorites';
-      props.promptSignin(error);
-    } else if (!props.favorites.find(fav => fav.movie_id === movie.movie_id)) {
-      await postToFavorites({ ...movie, user_id: props.user.id });
-      props.addFavorite(movie);
-    } else {
-      props.removeFavorite(movie.movie_id);
-      deleteFromFavorites(movie.movie_id, props.user.id);
-    }
-  };
 
   return (
     <article className="single-card">
@@ -45,17 +33,8 @@ export const SingleMovie = props => {
   );
 };
 
-export const mapStateToProps = state => ({
-  user: state.user,
-  favorites: state.favorites
-});
+SingleMovie.propTypes = {
+  movie: PropTypes.object
+}
 
-export const mapDispatchToProps = dispatch => ({
-  addFavorite: movie => dispatch(Actions.addFavorite(movie)),
-  removeFavorite: id => dispatch(Actions.removeFavorite(id)),
-  promptSignin: error => dispatch(Actions.promptSignIn(error))
-});
-
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(SingleMovie)
-);
+export default SingleMovie;
