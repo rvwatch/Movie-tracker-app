@@ -127,3 +127,275 @@ ShallowWrapper {
   },
 }
 `;
+
+exports[`App should render correctly on url set to /favorites 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <App
+    addFavorites={[Function]}
+    favorites={
+        Array [
+            Object {
+              "date": "Release Date: 2018-10-5",
+              "image": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
+              "movie_id": 10,
+              "overview": "Summary: The tables are turned as four teenagers.",
+              "title": "Fantastic Fours",
+              "vote": "Rating: 2.5",
+            },
+            Object {
+              "date": "Release Date: 2017-12-09",
+              "image": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
+              "movie_id": 101.350698,
+              "overview": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
+              "title": "Jumanji: Welcome to the Jungle",
+              "vote": "Rating: 6.5",
+            },
+          ]
+    }
+    history={
+        Object {
+            "action": "POP",
+            "block": [Function],
+            "createHref": [Function],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "length": 2,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "key": "sc9hau",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+    }
+    location={
+        Object {
+            "hash": "",
+            "pathname": "/favorites",
+            "search": "",
+            "state": undefined,
+          }
+    }
+    logout={[Function]}
+    retrieveMovies={[Function]}
+    signIn={[Function]}
+    user={
+        Object {
+            "email": "r@r.r",
+            "id": "5",
+            "name": "r",
+            "password": "r",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <Route
+        path="/"
+        render={[Function]}
+/>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "path": "/",
+        "render": [Function],
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <Route
+          path="/"
+          render={[Function]}
+/>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "path": "/",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`App should render correctly on url set to home / 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <App
+    addFavorites={[Function]}
+    favorites={
+        Array [
+            Object {
+              "date": "Release Date: 2018-10-5",
+              "image": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
+              "movie_id": 10,
+              "overview": "Summary: The tables are turned as four teenagers.",
+              "title": "Fantastic Fours",
+              "vote": "Rating: 2.5",
+            },
+            Object {
+              "date": "Release Date: 2017-12-09",
+              "image": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
+              "movie_id": 101.350698,
+              "overview": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
+              "title": "Jumanji: Welcome to the Jungle",
+              "vote": "Rating: 6.5",
+            },
+          ]
+    }
+    history={
+        Object {
+            "action": "POP",
+            "block": [Function],
+            "createHref": [Function],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "length": 2,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "key": "sc9hau",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+    }
+    location={
+        Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          }
+    }
+    logout={[Function]}
+    retrieveMovies={[Function]}
+    signIn={[Function]}
+    user={
+        Object {
+            "email": "r@r.r",
+            "id": "5",
+            "name": "r",
+            "password": "r",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <Route
+        path="/"
+        render={[Function]}
+/>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "path": "/",
+        "render": [Function],
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <Route
+          path="/"
+          render={[Function]}
+/>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "path": "/",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

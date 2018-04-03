@@ -1,11 +1,11 @@
 import React from 'react';
 import { App, mapDispatchToProps, mapStateToProps } from './App';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { getMovies } from '../../ApiCalls/getMovies';
 import { getFavorites } from '../../ApiCalls/getFavorites';
 import * as mock from '../../ApiCalls/unit-test/mockData';
-import * as actions from '../../Actions';
-import { createBrowserHistory } from 'history';
+import * as Actions from '../../Actions';
+import { createBrowserHistory, createLocation } from 'history';
 jest.mock('../../ApiCalls/getMovies');
 jest.mock('../../ApiCalls/getFavorites');
 
@@ -73,6 +73,7 @@ describe('App', () => {
   });
 
   it('should call saveUser', () => {
+    wrapper.instance().componentDidUpdate;
     const spy = jest.spyOn(wrapper.instance(), 'saveUser');
     expect(spy).toHaveBeenCalled();
   });
@@ -96,6 +97,40 @@ describe('App', () => {
     wrapper.instance().handleLogout();
     expect(localStorage).toEqual(expected);
   });
+
+  it('should render correctly on url set to home /', () => {
+    const location = createLocation('/');
+    wrapper = shallow(
+      <App
+        user={user}
+        favorites={favorites}
+        logout={logout}
+        signIn={signIn}
+        history={history}
+        addFavorites={addFavorites}
+        retrieveMovies={retrieveMovies}
+        location={location}
+      />
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render correctly on url set to /favorites', () => {
+    const location = createLocation('/favorites');
+    wrapper = shallow(
+      <App
+        user={user}
+        favorites={favorites}
+        logout={logout}
+        signIn={signIn}
+        history={history}
+        addFavorites={addFavorites}
+        retrieveMovies={retrieveMovies}
+        location={location}
+      />
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
 });
 
 describe('mapStateToProps', () => {
@@ -117,12 +152,37 @@ describe('mapStateToProps', () => {
 });
 
 describe('mapDispatchToProps', () => {
-  // it('should call dispatch with correct params', () => {
-  //   const mockDispatch = jest.fn();
-  //   const mockMovies = cleanedMovie;
-  //   const expected = actions.postMovies(mockMovies);
-  //   const mapped = mapDispatchToProps(mockDispatch);
-  //   mapped.retrieveMovies(mockMovies);
-  //   expect(mockDispatch).toHaveBeenCalledWith(expected);
-  // });
+  it('should call dispatch with correct params in retrieveMovies', () => {
+    const mockDispatch = jest.fn();
+    const movie = mock.cleanedMovie;
+    const expected = Actions.postMovies(movie);
+    const mapped = mapDispatchToProps(mockDispatch);
+    mapped.retrieveMovies(movie);
+    expect(mockDispatch).toHaveBeenCalledWith(expected);
+  });
+
+  it('should call logout', () => {
+    const mockDispatch = jest.fn();
+    const mapped = mapDispatchToProps(mockDispatch);
+    mapped.logout();
+    expect(mockDispatch).toHaveBeenCalled();
+  });
+
+  it('should call dispatch with correct params on signIn', () => {
+    const mockDispatch = jest.fn();
+    const user = mock.mockUser;
+    const expected = Actions.signInAction(user);
+    const mapped = mapDispatchToProps(mockDispatch);
+    mapped.signIn(user);
+    expect(mockDispatch).toHaveBeenCalledWith(expected);
+  });
+
+  it('should call dispatch with correct params on addFavorites', () => {
+    const mockDispatch = jest.fn();
+    const favorites = mock.mockFavoritesArray;
+    const expected = Actions.addExistingFavs(favorites);
+    const mapped = mapDispatchToProps(mockDispatch);
+    mapped.addFavorites(favorites);
+    expect(mockDispatch).toHaveBeenCalledWith(expected);
+  });
 });
