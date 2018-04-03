@@ -195,6 +195,7 @@ ShallowWrapper {
         "enableComponentDidUpdateOnSetState": true,
       },
     },
+    "disableLifecycleMethods": true,
   },
 }
 `;
