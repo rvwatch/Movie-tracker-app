@@ -4,12 +4,47 @@ exports[`Card should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Card
-    date="Release Date: 2017-12-09"
-    image="/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg"
-    overview="Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game."
-    title="Jumanji: Welcome to the Jungle"
-    vote="Rating: 6.5"
+  Symbol(enzyme.__unrendered__): <Unknown
+    addFavorite={[Function]}
+    favorites={
+        Array [
+            Object {
+              "date": "Release Date: 2018-10-5",
+              "image": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
+              "movie_id": 10,
+              "overview": "Summary: The tables are turned as four teenagers.",
+              "title": "Fantastic Fours",
+              "vote": "Rating: 2.5",
+            },
+            Object {
+              "date": "Release Date: 2017-12-09",
+              "image": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
+              "movie_id": 101.350698,
+              "overview": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
+              "title": "Jumanji: Welcome to the Jungle",
+              "vote": "Rating: 6.5",
+            },
+          ]
+    }
+    movie={
+        Object {
+            "movie_id": "1",
+            "overview": "Its not real",
+            "poster_path": "/hello",
+            "release_date": "04-01-18",
+            "title": "hello",
+            "user_id": "24",
+            "vote_average": "-5",
+          }
+    }
+    user={
+        Object {
+            "email": "r@r.r",
+            "id": "5",
+            "name": "r",
+            "password": "r",
+          }
+    }
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -25,21 +60,23 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <h1>
-          Jumanji: Welcome to the Jungle
+          hello
 </h1>,
-        <h3>
-          Release Date: 2017-12-09
-</h3>,
-        <p>
-          Rating: 6.5
-</p>,
-        <p>
-          Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.
-</p>,
+        <Link
+          replace={false}
+          to="/undefined/1"
+>
+          Show More
+</Link>,
+        <button
+          onClick={[Function]}
+>
+          Favorite
+</button>,
       ],
-      "className": "card",
+      "className": "card undefined",
       "style": Object {
-        "background": "url('https://image.tmdb.org/t/p/w500//bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg')",
+        "background": "url('https://image.tmdb.org/t/p/w500//hello')",
       },
     },
     "ref": null,
@@ -49,44 +86,36 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Jumanji: Welcome to the Jungle",
+          "children": "hello",
         },
         "ref": null,
-        "rendered": "Jumanji: Welcome to the Jungle",
+        "rendered": "hello",
         "type": "h1",
       },
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "class",
         "props": Object {
-          "children": "Release Date: 2017-12-09",
+          "children": "Show More",
+          "replace": false,
+          "to": "/undefined/1",
         },
         "ref": null,
-        "rendered": "Release Date: 2017-12-09",
-        "type": "h3",
+        "rendered": "Show More",
+        "type": [Function],
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Rating: 6.5",
+          "children": "Favorite",
+          "onClick": [Function],
         },
         "ref": null,
-        "rendered": "Rating: 6.5",
-        "type": "p",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
-        },
-        "ref": null,
-        "rendered": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
-        "type": "p",
+        "rendered": "Favorite",
+        "type": "button",
       },
     ],
     "type": "article",
@@ -99,21 +128,23 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <h1>
-            Jumanji: Welcome to the Jungle
+            hello
 </h1>,
-          <h3>
-            Release Date: 2017-12-09
-</h3>,
-          <p>
-            Rating: 6.5
-</p>,
-          <p>
-            Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.
-</p>,
+          <Link
+            replace={false}
+            to="/undefined/1"
+>
+            Show More
+</Link>,
+          <button
+            onClick={[Function]}
+>
+            Favorite
+</button>,
         ],
-        "className": "card",
+        "className": "card undefined",
         "style": Object {
-          "background": "url('https://image.tmdb.org/t/p/w500//bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg')",
+          "background": "url('https://image.tmdb.org/t/p/w500//hello')",
         },
       },
       "ref": null,
@@ -123,44 +154,36 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Jumanji: Welcome to the Jungle",
+            "children": "hello",
           },
           "ref": null,
-          "rendered": "Jumanji: Welcome to the Jungle",
+          "rendered": "hello",
           "type": "h1",
         },
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "class",
           "props": Object {
-            "children": "Release Date: 2017-12-09",
+            "children": "Show More",
+            "replace": false,
+            "to": "/undefined/1",
           },
           "ref": null,
-          "rendered": "Release Date: 2017-12-09",
-          "type": "h3",
+          "rendered": "Show More",
+          "type": [Function],
         },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Rating: 6.5",
+            "children": "Favorite",
+            "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Rating: 6.5",
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
-          },
-          "ref": null,
-          "rendered": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
-          "type": "p",
+          "rendered": "Favorite",
+          "type": "button",
         },
       ],
       "type": "article",
