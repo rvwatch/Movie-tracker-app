@@ -74,7 +74,7 @@ export class App extends Component {
                     </aside>
                   )}
                   {typeof this.props.error === 'string' && (
-                    <h6>{this.props.error}</h6>
+                    <h6 className='error-message'>{this.props.error}</h6>
                   )}
                 </header>
                 <CardContainer />

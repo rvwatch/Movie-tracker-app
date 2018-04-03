@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Card from '../../Components/Card/Card';
 import PropTypes from 'prop-types';
 import SingleMovie from '../../Components/SingleMovie/SingleMovie';
+import './CardContainer.css';
 
 export const CardContainer = props => {
   const movieType =
@@ -24,7 +25,7 @@ export const CardContainer = props => {
     );
   });
   return (
-    <section>
+    <section className='card-container'>
       <Route
         exact
         path="/movies/:id"
@@ -39,14 +40,14 @@ export const CardContainer = props => {
         exact
         path="/"
         render={() => {
-          return <div>{renderCards}</div>;
+          return <div className='all-movies'>{renderCards}</div>;
         }}
       />
       <Route
         exact
         path="/favorites"
         render={() => {
-          return <div>{renderCards}</div>;
+          return <div className='all-movies'>{renderCards}</div>;
         }}
       />
 
