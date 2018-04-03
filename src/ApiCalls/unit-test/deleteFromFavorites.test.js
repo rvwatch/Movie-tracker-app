@@ -1,5 +1,4 @@
 import deleteFromFavorites from '../deleteFromFavorites';
-import * as mock from './mockData';
 
 describe('deleteFromFavorites', () => {
   beforeEach(() => {

@@ -1,10 +1,6 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { postToFavorites } from '../../ApiCalls/postToFavorites';
-import * as Actions from '../../Actions/';
-import { deleteFromFavorites } from '../../ApiCalls/deleteFromFavorites';
-import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './SingleMovie.css';
 
 const SingleMovie = props => {
@@ -21,6 +17,7 @@ const SingleMovie = props => {
       <h1>{title}</h1>
       <img
         className="movie-poster"
+        alt='movie poster'
         src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
       />
       <h3>{release_date}</h3>
@@ -34,7 +31,8 @@ const SingleMovie = props => {
 };
 
 SingleMovie.propTypes = {
-  movie: PropTypes.object
-}
+  movie: PropTypes.object,
+  lastPath: PropTypes.string
+};
 
 export default SingleMovie;

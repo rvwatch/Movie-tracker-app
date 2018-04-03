@@ -18,10 +18,7 @@ export const Card = ({
   cardClass
 }) => {
   const { 
-    title, 
-    overview, 
-    release_date, 
-    vote_average, 
+    title,  
     poster_path 
   } = movie;
 
@@ -69,7 +66,9 @@ Card.propTypes = {
   favorites: PropTypes.array,
   promptSignin: PropTypes.func,
   addFavorite: PropTypes.func,
-  removeFavorite: PropTypes.func
+  removeFavorite: PropTypes.func,
+  movieType: PropTypes.string,
+  cardClass: PropTypes.string
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card);

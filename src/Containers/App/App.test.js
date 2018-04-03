@@ -1,6 +1,6 @@
 import React from 'react';
 import { App, mapDispatchToProps, mapStateToProps } from './App';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { getMovies } from '../../ApiCalls/getMovies';
 import { getFavorites } from '../../ApiCalls/getFavorites';
 import * as mock from '../../ApiCalls/unit-test/mockData';
@@ -18,7 +18,7 @@ describe('App', () => {
   let favorites;
   let addFavorites;
   let user;
-  let getLastUserSpy;
+
   beforeEach(() => {
     signIn = jest.fn();
     logout = jest.fn();
