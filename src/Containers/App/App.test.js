@@ -18,6 +18,7 @@ describe('App', () => {
   let favorites;
   let addFavorites;
   let user;
+  let getLastUserSpy;
   beforeEach(() => {
     signIn = jest.fn();
     logout = jest.fn();
@@ -40,7 +41,7 @@ describe('App', () => {
         disableLifecycleMethods: false
       }
     );
-    localStorage.setItem('lastUser', JSON.stringify('Ricardo'));
+    localStorage.setItem('lastUser', JSON.stringify('r'));
   });
 
   it('should match the snapshot', () => {
@@ -56,12 +57,14 @@ describe('App', () => {
   });
 
   it('should call getLastUser', async () => {
-    const spy = jest.spyOn(wrapper.instance(), 'getLastUser');
-    expect(spy).toHaveBeenCalled();
+    const getLastUserSpy = jest.spyOn(wrapper.instance(), 'getLastUser');
+    await wrapper.instance().componentDidMount();
+    expect(getLastUserSpy).toHaveBeenCalled();
   });
 
   it('should call signIn', async () => {
-    expect(signIn).toHaveBeenCalled();
+    const expected = user.name;
+    expect(signIn).toHaveBeenCalledWith(expected);
   });
 
   it('should call getFavorites', () => {
@@ -72,14 +75,14 @@ describe('App', () => {
     expect(addFavorites).toHaveBeenCalled();
   });
 
-  it('should call saveUser', () => {
-    wrapper.instance().componentDidUpdate;
+  it('should call saveUser', async () => {
     const spy = jest.spyOn(wrapper.instance(), 'saveUser');
+    await wrapper.instance().componentDidUpdate();
     expect(spy).toHaveBeenCalled();
   });
 
   it('should getLast user from localStorage', () => {
-    const expected = 'Ricardo';
+    const expected = user.name;
     const results = wrapper.instance().getLastUser();
     expect(results).toEqual(expected);
   });
@@ -93,7 +96,7 @@ describe('App', () => {
   it('should logout a user', () => {
     const expected = {};
     const results = wrapper.instance().getLastUser();
-    expect(results).toEqual('Ricardo');
+    expect(results).toEqual(user.name);
     wrapper.instance().handleLogout();
     expect(localStorage).toEqual(expected);
   });

@@ -10,7 +10,7 @@ export const cleanMovies = movieData => {
     } = movie;
     return {
       title,
-      movie_id: Math.floor(Math.random() * 100000),
+      movie_id: overview.length,
       overview: `Summary: ${overview}`,
       release_date: `Release Date: ${release_date}`,
       vote_average: `Rating: ${vote_average}`,
