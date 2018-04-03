@@ -57,14 +57,16 @@ export class App extends Component {
                   </NavLink>
                   {this.props.user.name && (
                     <aside className="logged-in">
-                      <button onClick={this.handleLogout}>Logout</button>
-                      {this.props.location.pathname === '/' && (
-                        <NavLink to="/favorites">View Favorites</NavLink>
-                      )}
-                      {this.props.location.pathname === '/favorites' && (
-                        <NavLink to="/">View All</NavLink>
-                      )}
-                      <h1>Welcome: {this.props.user.name}</h1>
+                      <div className='user-container'>
+                        <button className='log-out-btn' onClick={this.handleLogout}>Logout</button>
+                        {this.props.location.pathname === '/' && (
+                          <NavLink className='favorites-btn' to="/favorites">View Favorites</NavLink>
+                        )}
+                        {this.props.location.pathname === '/favorites' && (
+                          <NavLink to="/">View All</NavLink>
+                        )}
+                        <h1 className='user-greeting'>Welcome: {this.props.user.name}</h1>
+                      </div>
                     </aside>
                   )}
                   {!this.props.user.name && (

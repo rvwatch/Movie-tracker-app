@@ -67,3 +67,41 @@
   text-decoration: underline;
   font-size: 18px;
 }
+
+.user-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.log-out-btn {
+  float: right;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-family: 'Anton', sans-serif;
+  font-size: 24px;
+  text-align: right;
+}
+
+.log-out-btn:hover {
+  color: #f1cc54;
+}
+
+.favorites-btn {
+  float: right;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  text-align: right;
+}
+
+.favorites-btn:hover {
+  color: #f1cc54;
+}
+
+.user-greeting {
+  float: right;
+  margin-top: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+}
