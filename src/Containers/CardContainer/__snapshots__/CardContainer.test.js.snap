@@ -8,11 +8,12 @@ ShallowWrapper {
     favorites={
         Array [
             Object {
-              "date": "Release Date: 2017-12-09",
-              "image": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
+              "movie_id": 101.350698,
               "overview": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
+              "poster_path": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
+              "release_date": "Release Date: 2017-12-09",
               "title": "Jumanji: Welcome to the Jungle",
-              "vote": "Rating: 6.5",
+              "vote_average": "Rating: 6.5",
             },
           ]
     }
@@ -38,16 +39,25 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Connect(Card)
-          movie={
-                    Object {
-                              "date": "Release Date: 2017-12-09",
-                              "image": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
-                              "overview": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
-                              "title": "Jumanji: Welcome to the Jungle",
-                              "vote": "Rating: 6.5",
-                            }
-          }
+        <Route
+          exact={true}
+          path="/movies/:id"
+          render={[Function]}
+/>,
+        <Route
+          exact={true}
+          path="/"
+          render={[Function]}
+/>,
+        <Route
+          exact={true}
+          path="/favorites"
+          render={[Function]}
+/>,
+        <Route
+          exact={true}
+          path="/favorites/:id"
+          render={[Function]}
 />,
       ],
     },
@@ -55,16 +65,51 @@ ShallowWrapper {
     "rendered": Array [
       Object {
         "instance": null,
-        "key": "Jumanji: Welcome to the Jungle",
+        "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "movie": Object {
-            "date": "Release Date: 2017-12-09",
-            "image": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
-            "overview": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
-            "title": "Jumanji: Welcome to the Jungle",
-            "vote": "Rating: 6.5",
-          },
+          "exact": true,
+          "path": "/movies/:id",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/favorites",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/favorites/:id",
+          "render": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -80,16 +125,25 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Connect(Card)
-            movie={
-                        Object {
-                                    "date": "Release Date: 2017-12-09",
-                                    "image": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
-                                    "overview": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
-                                    "title": "Jumanji: Welcome to the Jungle",
-                                    "vote": "Rating: 6.5",
-                                  }
-            }
+          <Route
+            exact={true}
+            path="/movies/:id"
+            render={[Function]}
+/>,
+          <Route
+            exact={true}
+            path="/"
+            render={[Function]}
+/>,
+          <Route
+            exact={true}
+            path="/favorites"
+            render={[Function]}
+/>,
+          <Route
+            exact={true}
+            path="/favorites/:id"
+            render={[Function]}
 />,
         ],
       },
@@ -97,16 +151,51 @@ ShallowWrapper {
       "rendered": Array [
         Object {
           "instance": null,
-          "key": "Jumanji: Welcome to the Jungle",
+          "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "movie": Object {
-              "date": "Release Date: 2017-12-09",
-              "image": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
-              "overview": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
-              "title": "Jumanji: Welcome to the Jungle",
-              "vote": "Rating: 6.5",
-            },
+            "exact": true,
+            "path": "/movies/:id",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/favorites",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/favorites/:id",
+            "render": [Function],
           },
           "ref": null,
           "rendered": null,
@@ -131,6 +220,26 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
+    favorites={
+        Array [
+            Object {
+              "date": "Release Date: 2018-10-5",
+              "image": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
+              "movie_id": 10,
+              "overview": "Summary: The tables are turned as four teenagers.",
+              "title": "Fantastic Fours",
+              "vote": "Rating: 2.5",
+            },
+            Object {
+              "date": "Release Date: 2017-12-09",
+              "image": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
+              "movie_id": 101.350698,
+              "overview": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
+              "title": "Jumanji: Welcome to the Jungle",
+              "vote": "Rating: 6.5",
+            },
+          ]
+    }
     location={
         Object {
             "hash": "",
@@ -142,11 +251,12 @@ ShallowWrapper {
     movies={
         Array [
             Object {
-              "date": "Release Date: 2017-12-09",
-              "image": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
+              "movie_id": 101.350698,
               "overview": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
+              "poster_path": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
+              "release_date": "Release Date: 2017-12-09",
               "title": "Jumanji: Welcome to the Jungle",
-              "vote": "Rating: 6.5",
+              "vote_average": "Rating: 6.5",
             },
           ]
     }
@@ -164,16 +274,25 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Connect(Card)
-          movie={
-                    Object {
-                              "date": "Release Date: 2017-12-09",
-                              "image": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
-                              "overview": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
-                              "title": "Jumanji: Welcome to the Jungle",
-                              "vote": "Rating: 6.5",
-                            }
-          }
+        <Route
+          exact={true}
+          path="/movies/:id"
+          render={[Function]}
+/>,
+        <Route
+          exact={true}
+          path="/"
+          render={[Function]}
+/>,
+        <Route
+          exact={true}
+          path="/favorites"
+          render={[Function]}
+/>,
+        <Route
+          exact={true}
+          path="/favorites/:id"
+          render={[Function]}
 />,
       ],
     },
@@ -181,16 +300,51 @@ ShallowWrapper {
     "rendered": Array [
       Object {
         "instance": null,
-        "key": "Jumanji: Welcome to the Jungle",
+        "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "movie": Object {
-            "date": "Release Date: 2017-12-09",
-            "image": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
-            "overview": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
-            "title": "Jumanji: Welcome to the Jungle",
-            "vote": "Rating: 6.5",
-          },
+          "exact": true,
+          "path": "/movies/:id",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/favorites",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/favorites/:id",
+          "render": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -206,16 +360,25 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Connect(Card)
-            movie={
-                        Object {
-                                    "date": "Release Date: 2017-12-09",
-                                    "image": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
-                                    "overview": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
-                                    "title": "Jumanji: Welcome to the Jungle",
-                                    "vote": "Rating: 6.5",
-                                  }
-            }
+          <Route
+            exact={true}
+            path="/movies/:id"
+            render={[Function]}
+/>,
+          <Route
+            exact={true}
+            path="/"
+            render={[Function]}
+/>,
+          <Route
+            exact={true}
+            path="/favorites"
+            render={[Function]}
+/>,
+          <Route
+            exact={true}
+            path="/favorites/:id"
+            render={[Function]}
 />,
         ],
       },
@@ -223,16 +386,521 @@ ShallowWrapper {
       "rendered": Array [
         Object {
           "instance": null,
-          "key": "Jumanji: Welcome to the Jungle",
+          "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "movie": Object {
+            "exact": true,
+            "path": "/movies/:id",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/favorites",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/favorites/:id",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "section",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`CardContainer should match the snapshot on /favorites/:id 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    favorites={
+        Array [
+            Object {
+              "date": "Release Date: 2018-10-5",
+              "image": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
+              "movie_id": 10,
+              "overview": "Summary: The tables are turned as four teenagers.",
+              "title": "Fantastic Fours",
+              "vote": "Rating: 2.5",
+            },
+            Object {
               "date": "Release Date: 2017-12-09",
               "image": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
+              "movie_id": 101.350698,
               "overview": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
               "title": "Jumanji: Welcome to the Jungle",
               "vote": "Rating: 6.5",
             },
+          ]
+    }
+    location={
+        Object {
+            "hash": "",
+            "pathname": "/favorites/4",
+            "search": "",
+            "state": undefined,
+          }
+    }
+    movies={
+        Array [
+            Object {
+              "movie_id": 101.350698,
+              "overview": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
+              "poster_path": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
+              "release_date": "Release Date: 2017-12-09",
+              "title": "Jumanji: Welcome to the Jungle",
+              "vote_average": "Rating: 6.5",
+            },
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Route
+          exact={true}
+          path="/movies/:id"
+          render={[Function]}
+/>,
+        <Route
+          exact={true}
+          path="/"
+          render={[Function]}
+/>,
+        <Route
+          exact={true}
+          path="/favorites"
+          render={[Function]}
+/>,
+        <Route
+          exact={true}
+          path="/favorites/:id"
+          render={[Function]}
+/>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/movies/:id",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/favorites",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/favorites/:id",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Route
+            exact={true}
+            path="/movies/:id"
+            render={[Function]}
+/>,
+          <Route
+            exact={true}
+            path="/"
+            render={[Function]}
+/>,
+          <Route
+            exact={true}
+            path="/favorites"
+            render={[Function]}
+/>,
+          <Route
+            exact={true}
+            path="/favorites/:id"
+            render={[Function]}
+/>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/movies/:id",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/favorites",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/favorites/:id",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "section",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`CardContainer should match the snapshot on /movies/:id 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    favorites={
+        Array [
+            Object {
+              "date": "Release Date: 2018-10-5",
+              "image": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
+              "movie_id": 10,
+              "overview": "Summary: The tables are turned as four teenagers.",
+              "title": "Fantastic Fours",
+              "vote": "Rating: 2.5",
+            },
+            Object {
+              "date": "Release Date: 2017-12-09",
+              "image": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
+              "movie_id": 101.350698,
+              "overview": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
+              "title": "Jumanji: Welcome to the Jungle",
+              "vote": "Rating: 6.5",
+            },
+          ]
+    }
+    location={
+        Object {
+            "hash": "",
+            "pathname": "/movies/3",
+            "search": "",
+            "state": undefined,
+          }
+    }
+    movies={
+        Array [
+            Object {
+              "movie_id": 101.350698,
+              "overview": "Summary: The tables are turned as four teenagers are sucked into Jumanji's world - pitted against rhinos, black mambas and an endless variety of jungle traps and puzzles. To survive, they'll play as characters from the game.",
+              "poster_path": "/bXrZ5iHBEjH7WMidbUDQ0U2xbmr.jpg",
+              "release_date": "Release Date: 2017-12-09",
+              "title": "Jumanji: Welcome to the Jungle",
+              "vote_average": "Rating: 6.5",
+            },
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Route
+          exact={true}
+          path="/movies/:id"
+          render={[Function]}
+/>,
+        <Route
+          exact={true}
+          path="/"
+          render={[Function]}
+/>,
+        <Route
+          exact={true}
+          path="/favorites"
+          render={[Function]}
+/>,
+        <Route
+          exact={true}
+          path="/favorites/:id"
+          render={[Function]}
+/>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/movies/:id",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/favorites",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "exact": true,
+          "path": "/favorites/:id",
+          "render": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Route
+            exact={true}
+            path="/movies/:id"
+            render={[Function]}
+/>,
+          <Route
+            exact={true}
+            path="/"
+            render={[Function]}
+/>,
+          <Route
+            exact={true}
+            path="/favorites"
+            render={[Function]}
+/>,
+          <Route
+            exact={true}
+            path="/favorites/:id"
+            render={[Function]}
+/>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/movies/:id",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/favorites",
+            "render": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "exact": true,
+            "path": "/favorites/:id",
+            "render": [Function],
           },
           "ref": null,
           "rendered": null,
