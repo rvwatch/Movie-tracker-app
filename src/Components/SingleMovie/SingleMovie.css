@@ -1,5 +1,6 @@
 .single-card {
   position: fixed;
+  padding-top: 20px;
   z-index: 20;
   top: 0;
   color: #fff;
@@ -8,20 +9,59 @@
   width: 100%;
 }
 
+.single-card-title {
+  display: block;
+  margin-bottom: 10px;
+  font-family: 'Anton', sans-serif;
+  color: #f1cc54;
+  font-size: 50px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.poster-container {
+  display: flex;
+  margin: auto;
+  width: 1000px;
+  justify-content: space-around;
+}
+
 .movie-poster {
-  height: 600px;
+  display: inline-block;
+  height: 650px;
+  border: 1px solid #062a78;
+  box-shadow: 0px 0px 6px 1px #062a78;
+}
+
+.single-card-date,
+.single-card-vote {
+  display: block;
+  margin: 15px;
+  color: #ECE4B7;
+  font-family: 'Roboto', sans-serif;
+  font-size: 28px;
+  text-align: center;
 }
 
 .overview {
+  display: inline-block;
   width: 500px;
-  margin: auto;
+  color: #ECE4B7;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  line-height: 26px;
+  vertical-align: top;
 }
 
 .close {
   position: absolute;
   top: 20px;
-  right: 30%;
+  right: 15%;
   color: white;
-  font-size: 20px;
+  font-size: 26px;
   text-decoration: none;
+}
+
+.close:hover {
+  color: #f1cc54;
 }

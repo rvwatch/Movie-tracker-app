@@ -106,7 +106,11 @@ App.propTypes = {
   user: PropTypes.object,
   logout: PropTypes.func,
   location: PropTypes.object,
-  error: PropTypes.bool,
+  error: PropTypes.oneOfType([
+  PropTypes.bool,
+  PropTypes.string,
+  PropTypes.object
+  ]),
   history: PropTypes.object
 };
 

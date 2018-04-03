@@ -14,15 +14,19 @@ const SingleMovie = props => {
 
   return (
     <article className="single-card">
-      <h1>{title}</h1>
-      <img
-        className="movie-poster"
-        alt='movie poster'
-        src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
-      />
-      <h3>{release_date}</h3>
-      <p>{vote_average}</p>
-      <p className="overview">{overview}</p>
+      <h1 className='single-card-title'>{title}</h1>
+      <div className='poster-container'>
+        <img
+          className="movie-poster"
+          alt='movie poster'
+          src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+        />
+        <div className='single-card-info'>
+          <p className="overview">{overview}</p>
+          <h3 className='single-card-date'>{release_date}</h3>
+          <p className='single-card-vote'>{vote_average}</p>
+        </div>
+      </div>
       <Link className="close" to={`/${props.lastPath}`}>
         x
       </Link>
