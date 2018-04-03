@@ -16,10 +16,10 @@ describe('favoritesReducer', () => {
 
   it('should remove favorites from state', () => {
     const movie = mock.mockFavorite;
-    const expected = [];
-    expect(favoritesReducer(undefined, removeFavorite(movie))).toEqual(
-      expected
-    );
+    const expected = [mock.mockRemainingFavorite];
+    expect(
+      favoritesReducer(mock.mockFavoritesArray, removeFavorite(movie.movie_id))
+    ).toEqual(expected);
   });
 
   it('should get favorites from state', () => {

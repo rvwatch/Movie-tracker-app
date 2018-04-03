@@ -36,6 +36,7 @@ export const CardContainer = props => {
         }}
       />
       <Route
+        exact
         path="/"
         render={({ match }) => {
           return <div>{renderCards}</div>;

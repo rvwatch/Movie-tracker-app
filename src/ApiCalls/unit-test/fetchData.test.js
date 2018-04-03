@@ -19,7 +19,7 @@ describe('fetchData', () => {
     expect(returnedMovies).toEqual(expected);
   });
 
-  it('throw an error if the fetch fails', async () => {
+  it('throw an error if the fetch fails', () => {
     window.fetch = jest.fn().mockImplementation(() =>
       Promise.reject({
         status: 500,

@@ -1,31 +1,32 @@
-const postToFavorites = async (movie) => {
-  const { 
-    movie_id, 
-    user_id, 
-    title, 
-    poster_path, 
-    release_date, 
-    vote_average, 
-    overview 
+const postToFavorites = async movie => {
+  const {
+    movie_id,
+    user_id,
+    title,
+    poster_path,
+    release_date,
+    vote_average,
+    overview
   } = movie;
 
   try {
     const response = await fetch('api/users/favorites/new', {
       method: 'POST',
       body: JSON.stringify({
-        movie_id, 
-        user_id, 
-        title, 
-        poster_path, 
-        release_date, 
-        vote_average, 
+        movie_id,
+        user_id,
+        title,
+        poster_path,
+        release_date,
+        vote_average,
         overview
       }),
       headers: {
-        'Content-Type' : 'application/json'
+        'Content-Type': 'application/json'
       }
     });
     const favId = await response.json();
+
     return favId;
   } catch (errs) {
     throw new Error(errs.message);
@@ -33,6 +34,3 @@ const postToFavorites = async (movie) => {
 };
 
 export { postToFavorites };
-
-
-

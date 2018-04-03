@@ -7,7 +7,7 @@ import { deleteFromFavorites } from '../../ApiCalls/deleteFromFavorites';
 import './Card.css';
 import PropTypes from 'prop-types';
 
-const Card = ({
+export const Card = ({
   movie,
   user,
   favorites,
