@@ -1,8 +1,10 @@
 import React from 'react';
-import { SignIn } from './SignIn';
+import { SignIn, mapDispatchToProps } from './SignIn';
 import { shallow } from 'enzyme';
 import { signinUser } from '../../ApiCalls/signinUser';
 import { getFavorites } from '../../ApiCalls/getFavorites';
+import * as Actions from "../../Actions";
+import * as mock from "../../ApiCalls/unit-test/mockData";
 jest.mock('../../ApiCalls/signinUser.js');
 jest.mock('../../ApiCalls/getFavorites.js');
 
@@ -76,3 +78,42 @@ describe('Login', () => {
     expect(mockInvalidSignIn).toHaveBeenCalled();
   });
 });
+
+describe("mapDispatchToProps", () => {
+  it("should call dispatch with correct params on signInDispatch", () => {
+    const mockDispatch = jest.fn();
+    const user = mock.mockUser;
+    const expected = Actions.signInAction(user);
+    const mapped = mapDispatchToProps(mockDispatch);
+    mapped.signInDispatch(user);
+    expect(mockDispatch).toHaveBeenCalledWith(expected);
+  });
+
+  it("should call dispatch with correct params on invalidSignIn", () => {
+    const mockDispatch = jest.fn();
+    const error = 'error';
+    const expected = Actions.invalidSignIn(error);
+    const mapped = mapDispatchToProps(mockDispatch);
+    mapped.invalidSignIn(error);
+    expect(mockDispatch).toHaveBeenCalledWith(expected);
+  });
+
+  it("should call dispatch with correct params on validSignIn", () => {
+    const mockDispatch = jest.fn();
+    const valid = "true";
+    const expected = Actions.validSignIn(valid);
+    const mapped = mapDispatchToProps(mockDispatch);
+    mapped.validSignIn(valid);
+    expect(mockDispatch).toHaveBeenCalledWith(expected);
+  });
+
+  it("should call dispatch with correct params on addExistingFavs", () => {
+    const mockDispatch = jest.fn();
+    const existingFavs = [{}, {}];
+    const expected = Actions.addExistingFavs(existingFavs);
+    const mapped = mapDispatchToProps(mockDispatch);
+    mapped.addExistingFavs(existingFavs);
+    expect(mockDispatch).toHaveBeenCalledWith(expected);
+  });
+});
+

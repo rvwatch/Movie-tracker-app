@@ -73,7 +73,7 @@ export class NewUser extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   postNewUser: user => dispatch(Actions.addUser(user)),
   invalidSignIn: error => dispatch(Actions.invalidSignIn(error)),
   validSignIn: valid => dispatch(Actions.validSignIn(valid))
