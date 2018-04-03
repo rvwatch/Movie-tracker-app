@@ -17,8 +17,7 @@ export const Card = ({
   movieType,
   cardClass
 }) => {
-  const { 
-    title,  
+  const {  
     poster_path 
   } = movie;
 
@@ -35,18 +34,16 @@ export const Card = ({
     }
   };
 
-  return (
-    <article
-      className={`card ${cardClass}`}
-      style={{
-        background: `url('https://image.tmdb.org/t/p/w500/${poster_path}')`
-      }}
-    >
-      <h1>{title}</h1>
-      <Link to={`/${movieType}/${movie.movie_id}`}>Show More</Link>
-      <button onClick={() => toggleFavorite(movie)}>Favorite</button>
-    </article>
-  );
+  return <article className={`card ${cardClass}`} style={{ background: `url('https://image.tmdb.org/t/p/w500/${poster_path}')`, backgroundSize: '250px 350px' }}>
+    <Link to={`/${movieType}/${movie.movie_id}`} className="show-more-summary">
+        Show More
+    </Link>
+    <button onClick={() => toggleFavorite(movie)}     className="favorites-button">
+      <span role='img' aria-labelledby='favorites-button'>
+        &#x2B50;
+      </span>
+    </button>
+  </article>;
 };
 
 export const mapStateToProps = state => ({
