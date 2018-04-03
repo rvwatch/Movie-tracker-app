@@ -52,8 +52,11 @@ export class App extends Component {
             return (
               <main className="App">
                 <header>
+                  <NavLink to="/" className="logo">
+                    BLOCKBUSTER MOVIE TRACKER
+                  </NavLink>
                   {this.props.user.name && (
-                    <div>
+                    <aside className="logged-in">
                       <button onClick={this.handleLogout}>Logout</button>
                       {this.props.location.pathname === '/' && (
                         <NavLink to="/favorites">View Favorites</NavLink>
@@ -62,13 +65,13 @@ export class App extends Component {
                         <NavLink to="/">View All</NavLink>
                       )}
                       <h1>Welcome: {this.props.user.name}</h1>
-                    </div>
+                    </aside>
                   )}
                   {!this.props.user.name && (
-                    <div>
+                    <aside className="logged-out">
                       <NavLink to="/signIn">Login / SignUp</NavLink>
                       <Login />
-                    </div>
+                    </aside>
                   )}
                   {typeof this.props.error === 'string' && (
                     <h6>{this.props.error}</h6>

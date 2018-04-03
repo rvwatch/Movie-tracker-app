@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { addNewUser } from '../../ApiCalls/addNewUser';
 import * as Actions from '../../Actions';
 import { NavLink, withRouter } from 'react-router-dom';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 export class NewUser extends Component {
   constructor() {
@@ -27,17 +27,17 @@ export class NewUser extends Component {
     const { name, email } = this.state;
     try {
       const id = await addNewUser({ ...this.state });
-      this.props.postNewUser({name, email, id});
+      this.props.postNewUser({ name, email, id });
       this.props.validSignIn(false);
     } catch (error) {
       this.props.invalidSignIn(error.message);
     }
-  } 
+  };
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <NavLink to="/signIn">Login</NavLink>
+      <form className="login-menu" onSubmit={this.handleSubmit}>
+        <h2>Create New Account</h2>
         <label>
           <input
             type="text"
@@ -65,8 +65,11 @@ export class NewUser extends Component {
             onChange={this.handleInput}
           />
         </label>
-        <NavLink to='/' onClick={this.handleSubmit}>
-          <button>Submit</button>
+        <NavLink to="/" onClick={this.handleSubmit}>
+          <button>Create</button>
+        </NavLink>
+        <NavLink className="toggle-signin-btn" to="/signIn">
+          Already a Member?
         </NavLink>
       </form>
     );

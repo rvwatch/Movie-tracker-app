@@ -42,8 +42,8 @@ export class SignIn extends Component {
 
   render() {
     return (
-      <form>
-        <NavLink to="/new-user">Sign Up</NavLink>
+      <form className="login-menu">
+        <h2>Please Sign In Below</h2>
         <label>
           <input
             type="email"
@@ -63,7 +63,10 @@ export class SignIn extends Component {
           />
         </label>
         <NavLink to="/" onClick={this.handleSubmit}>
-          <button>Submit</button>
+          <button>Sign-In</button>
+        </NavLink>
+        <NavLink className="toggle-signin-btn" to="/new-user">
+          Create New Account
         </NavLink>
       </form>
     );
