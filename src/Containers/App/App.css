@@ -1,28 +1,69 @@
-.App {
-  text-align: center;
+.App header {
+  background-color: #062a78;
+  padding: 40px 20px;
+  position: relative;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.logo {
+  font-family: 'Anton', sans-serif;
+  color: #f1cc54;
+  font-size: 50px;
+  letter-spacing: 3px;
+  text-decoration: none;
+  border: 3px solid #f1cc54;
+  padding: 5px 20px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
+.logged-in,
+.logged-out {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+}
+
+.logged-in a,
+.logged-out a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.login-menu {
+  position: absolute;
+  background-color: #f1cc54;
+  top: 0;
+  left: -120px;
   padding: 20px;
-  color: white;
+  z-index: 20;
 }
 
-.App-title {
-  font-size: 1.5em;
+.login-menu h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
 }
 
-.App-intro {
-  font-size: large;
+.login-menu input {
+  margin: 5px 0;
+  width: 97%;
+  font-size: 18px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.login-menu button {
+  display: block;
+  margin-top: 10px;
+  font-size: 18px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.login-menu .toggle-signin-btn {
+  display: block;
+  margin-top: 20px;
+  text-decoration: underline;
+  font-size: 18px;
 }
