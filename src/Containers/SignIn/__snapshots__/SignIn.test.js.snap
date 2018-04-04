@@ -23,13 +23,9 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <NavLink
-          activeClassName="active"
-          ariaCurrent="true"
-          to="/new-user"
->
-          Sign Up
-</NavLink>,
+        <h2>
+          Please Sign In Below
+</h2>,
         <label>
           <input
                     name="email"
@@ -55,26 +51,32 @@ ShallowWrapper {
           to="/"
 >
           <button>
-                    Submit
+                    Sign-In
           </button>
 </NavLink>,
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          className="toggle-signin-btn"
+          to="/new-user"
+>
+          Create New Account
+</NavLink>,
       ],
+      "className": "login-menu",
     },
     "ref": null,
     "rendered": Array [
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "host",
         "props": Object {
-          "activeClassName": "active",
-          "ariaCurrent": "true",
-          "children": "Sign Up",
-          "to": "/new-user",
+          "children": "Please Sign In Below",
         },
         "ref": null,
-        "rendered": "Sign Up",
-        "type": [Function],
+        "rendered": "Please Sign In Below",
+        "type": "h2",
       },
       Object {
         "instance": null,
@@ -146,7 +148,7 @@ ShallowWrapper {
           "activeClassName": "active",
           "ariaCurrent": "true",
           "children": <button>
-            Submit
+            Sign-In
 </button>,
           "onClick": [Function],
           "to": "/",
@@ -157,12 +159,27 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Submit",
+            "children": "Sign-In",
           },
           "ref": null,
-          "rendered": "Submit",
+          "rendered": "Sign-In",
           "type": "button",
         },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "activeClassName": "active",
+          "ariaCurrent": "true",
+          "children": "Create New Account",
+          "className": "toggle-signin-btn",
+          "to": "/new-user",
+        },
+        "ref": null,
+        "rendered": "Create New Account",
         "type": [Function],
       },
     ],
@@ -175,13 +192,9 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <NavLink
-            activeClassName="active"
-            ariaCurrent="true"
-            to="/new-user"
->
-            Sign Up
-</NavLink>,
+          <h2>
+            Please Sign In Below
+</h2>,
           <label>
             <input
                         name="email"
@@ -207,26 +220,32 @@ ShallowWrapper {
             to="/"
 >
             <button>
-                        Submit
+                        Sign-In
             </button>
 </NavLink>,
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            className="toggle-signin-btn"
+            to="/new-user"
+>
+            Create New Account
+</NavLink>,
         ],
+        "className": "login-menu",
       },
       "ref": null,
       "rendered": Array [
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "host",
           "props": Object {
-            "activeClassName": "active",
-            "ariaCurrent": "true",
-            "children": "Sign Up",
-            "to": "/new-user",
+            "children": "Please Sign In Below",
           },
           "ref": null,
-          "rendered": "Sign Up",
-          "type": [Function],
+          "rendered": "Please Sign In Below",
+          "type": "h2",
         },
         Object {
           "instance": null,
@@ -298,7 +317,7 @@ ShallowWrapper {
             "activeClassName": "active",
             "ariaCurrent": "true",
             "children": <button>
-              Submit
+              Sign-In
 </button>,
             "onClick": [Function],
             "to": "/",
@@ -309,12 +328,27 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Submit",
+              "children": "Sign-In",
             },
             "ref": null,
-            "rendered": "Submit",
+            "rendered": "Sign-In",
             "type": "button",
           },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": "Create New Account",
+            "className": "toggle-signin-btn",
+            "to": "/new-user",
+          },
+          "ref": null,
+          "rendered": "Create New Account",
           "type": [Function],
         },
       ],

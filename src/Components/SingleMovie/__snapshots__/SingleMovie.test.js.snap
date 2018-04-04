@@ -30,25 +30,39 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h1>
+        <h1
+          className="single-card-title"
+>
           hello
 </h1>,
-        <img
-          alt="movie poster"
-          className="movie-poster"
-          src="https://image.tmdb.org/t/p/w500//hello"
-/>,
-        <h3>
-          04-01-18
-</h3>,
-        <p>
-          -5
-</p>,
-        <p
-          className="overview"
+        <div
+          className="poster-container"
 >
-          Its not real
-</p>,
+          <img
+                    alt="movie poster"
+                    className="movie-poster"
+                    src="https://image.tmdb.org/t/p/w500//hello"
+          />
+          <div
+                    className="single-card-info"
+          >
+                    <p
+                              className="overview"
+                    >
+                              Its not real
+                    </p>
+                    <h3
+                              className="single-card-date"
+                    >
+                              04-01-18
+                    </h3>
+                    <p
+                              className="single-card-vote"
+                    >
+                              -5
+                    </p>
+          </div>
+</div>,
         <Link
           className="close"
           replace={false}
@@ -67,6 +81,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "hello",
+          "className": "single-card-title",
         },
         "ref": null,
         "rendered": "hello",
@@ -77,47 +92,116 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "alt": "movie poster",
-          "className": "movie-poster",
-          "src": "https://image.tmdb.org/t/p/w500//hello",
+          "children": Array [
+            <img
+              alt="movie poster"
+              className="movie-poster"
+              src="https://image.tmdb.org/t/p/w500//hello"
+/>,
+            <div
+              className="single-card-info"
+>
+              <p
+                            className="overview"
+              >
+                            Its not real
+              </p>
+              <h3
+                            className="single-card-date"
+              >
+                            04-01-18
+              </h3>
+              <p
+                            className="single-card-vote"
+              >
+                            -5
+              </p>
+</div>,
+          ],
+          "className": "poster-container",
         },
         "ref": null,
-        "rendered": null,
-        "type": "img",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "04-01-18",
-        },
-        "ref": null,
-        "rendered": "04-01-18",
-        "type": "h3",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "-5",
-        },
-        "ref": null,
-        "rendered": "-5",
-        "type": "p",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Its not real",
-          "className": "overview",
-        },
-        "ref": null,
-        "rendered": "Its not real",
-        "type": "p",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "movie poster",
+              "className": "movie-poster",
+              "src": "https://image.tmdb.org/t/p/w500//hello",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <p
+                  className="overview"
+>
+                  Its not real
+</p>,
+                <h3
+                  className="single-card-date"
+>
+                  04-01-18
+</h3>,
+                <p
+                  className="single-card-vote"
+>
+                  -5
+</p>,
+              ],
+              "className": "single-card-info",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Its not real",
+                  "className": "overview",
+                },
+                "ref": null,
+                "rendered": "Its not real",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "04-01-18",
+                  "className": "single-card-date",
+                },
+                "ref": null,
+                "rendered": "04-01-18",
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "-5",
+                  "className": "single-card-vote",
+                },
+                "ref": null,
+                "rendered": "-5",
+                "type": "p",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
       },
       Object {
         "instance": null,
@@ -143,25 +227,39 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h1>
+          <h1
+            className="single-card-title"
+>
             hello
 </h1>,
-          <img
-            alt="movie poster"
-            className="movie-poster"
-            src="https://image.tmdb.org/t/p/w500//hello"
-/>,
-          <h3>
-            04-01-18
-</h3>,
-          <p>
-            -5
-</p>,
-          <p
-            className="overview"
+          <div
+            className="poster-container"
 >
-            Its not real
-</p>,
+            <img
+                        alt="movie poster"
+                        className="movie-poster"
+                        src="https://image.tmdb.org/t/p/w500//hello"
+            />
+            <div
+                        className="single-card-info"
+            >
+                        <p
+                                    className="overview"
+                        >
+                                    Its not real
+                        </p>
+                        <h3
+                                    className="single-card-date"
+                        >
+                                    04-01-18
+                        </h3>
+                        <p
+                                    className="single-card-vote"
+                        >
+                                    -5
+                        </p>
+            </div>
+</div>,
           <Link
             className="close"
             replace={false}
@@ -180,6 +278,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "hello",
+            "className": "single-card-title",
           },
           "ref": null,
           "rendered": "hello",
@@ -190,47 +289,116 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "alt": "movie poster",
-            "className": "movie-poster",
-            "src": "https://image.tmdb.org/t/p/w500//hello",
+            "children": Array [
+              <img
+                alt="movie poster"
+                className="movie-poster"
+                src="https://image.tmdb.org/t/p/w500//hello"
+/>,
+              <div
+                className="single-card-info"
+>
+                <p
+                                className="overview"
+                >
+                                Its not real
+                </p>
+                <h3
+                                className="single-card-date"
+                >
+                                04-01-18
+                </h3>
+                <p
+                                className="single-card-vote"
+                >
+                                -5
+                </p>
+</div>,
+            ],
+            "className": "poster-container",
           },
           "ref": null,
-          "rendered": null,
-          "type": "img",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "04-01-18",
-          },
-          "ref": null,
-          "rendered": "04-01-18",
-          "type": "h3",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "-5",
-          },
-          "ref": null,
-          "rendered": "-5",
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Its not real",
-            "className": "overview",
-          },
-          "ref": null,
-          "rendered": "Its not real",
-          "type": "p",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "movie poster",
+                "className": "movie-poster",
+                "src": "https://image.tmdb.org/t/p/w500//hello",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <p
+                    className="overview"
+>
+                    Its not real
+</p>,
+                  <h3
+                    className="single-card-date"
+>
+                    04-01-18
+</h3>,
+                  <p
+                    className="single-card-vote"
+>
+                    -5
+</p>,
+                ],
+                "className": "single-card-info",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Its not real",
+                    "className": "overview",
+                  },
+                  "ref": null,
+                  "rendered": "Its not real",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "04-01-18",
+                    "className": "single-card-date",
+                  },
+                  "ref": null,
+                  "rendered": "04-01-18",
+                  "type": "h3",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "-5",
+                    "className": "single-card-vote",
+                  },
+                  "ref": null,
+                  "rendered": "-5",
+                  "type": "p",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
         },
         Object {
           "instance": null,
