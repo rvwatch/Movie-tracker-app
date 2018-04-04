@@ -14,9 +14,9 @@ This project is currently through the extensions of the project specification. U
 
 ## Project Screen Shots
 
-![Main page]()
+![Main page](readme-images/main.png)
 
-![Favorites page](readme-images/favs.png)
+![Single Movie](readme-images/single-movie.png)
 
 ## Installation and Setup Instructions
 
