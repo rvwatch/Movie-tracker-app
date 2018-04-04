@@ -60,6 +60,7 @@ ShallowWrapper {
           render={[Function]}
 />,
       ],
+      "className": "card-container",
     },
     "ref": null,
     "rendered": Array [
@@ -146,6 +147,7 @@ ShallowWrapper {
             render={[Function]}
 />,
         ],
+        "className": "card-container",
       },
       "ref": null,
       "rendered": Array [
@@ -295,6 +297,7 @@ ShallowWrapper {
           render={[Function]}
 />,
       ],
+      "className": "card-container",
     },
     "ref": null,
     "rendered": Array [
@@ -381,6 +384,7 @@ ShallowWrapper {
             render={[Function]}
 />,
         ],
+        "className": "card-container",
       },
       "ref": null,
       "rendered": Array [
@@ -530,6 +534,7 @@ ShallowWrapper {
           render={[Function]}
 />,
       ],
+      "className": "card-container",
     },
     "ref": null,
     "rendered": Array [
@@ -616,6 +621,7 @@ ShallowWrapper {
             render={[Function]}
 />,
         ],
+        "className": "card-container",
       },
       "ref": null,
       "rendered": Array [
@@ -765,6 +771,7 @@ ShallowWrapper {
           render={[Function]}
 />,
       ],
+      "className": "card-container",
     },
     "ref": null,
     "rendered": Array [
@@ -851,6 +858,7 @@ ShallowWrapper {
             render={[Function]}
 />,
         ],
+        "className": "card-container",
       },
       "ref": null,
       "rendered": Array [

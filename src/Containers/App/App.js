@@ -58,14 +58,25 @@ export class App extends Component {
                   {this.props.user.name && (
                     <aside className="logged-in">
                       <div className='user-container'>
-                        <button className='log-out-btn' onClick={this.handleLogout}>Logout</button>
+                        <button 
+                          className='log-out-btn' 
+                          onClick={this.handleLogout}>
+                            Logout
+                        </button>
                         {this.props.location.pathname === '/' && (
-                          <NavLink className='favorites-btn' to="/favorites">View Favorites</NavLink>
+                          <NavLink 
+                            className='favorites-btn' 
+                            to="/favorites">
+                              View Favorites
+                          </NavLink>
                         )}
                         {this.props.location.pathname === '/favorites' && (
                           <NavLink to="/">View All</NavLink>
                         )}
-                        <h1 className='user-greeting'>Welcome: {this.props.user.name}</h1>
+                        <h1 
+                          className='user-greeting'>
+                            Welcome: {this.props.user.name}
+                        </h1>
                       </div>
                     </aside>
                   )}
@@ -109,9 +120,9 @@ App.propTypes = {
   logout: PropTypes.func,
   location: PropTypes.object,
   error: PropTypes.oneOfType([
-  PropTypes.bool,
-  PropTypes.string,
-  PropTypes.object
+    PropTypes.bool,
+    PropTypes.string,
+    PropTypes.object
   ]),
   history: PropTypes.object
 };

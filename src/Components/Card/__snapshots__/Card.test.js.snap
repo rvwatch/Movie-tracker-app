@@ -59,24 +59,29 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h1>
-          hello
-</h1>,
         <Link
+          className="show-more-summary"
           replace={false}
           to="/undefined/1"
 >
           Show More
 </Link>,
         <button
+          className="favorites-button"
           onClick={[Function]}
 >
-          Favorite
+          <span
+                    aria-labelledby="favorites-button"
+                    role="img"
+          >
+                    ⭐
+          </span>
 </button>,
       ],
       "className": "card undefined",
       "style": Object {
         "background": "url('https://image.tmdb.org/t/p/w500//hello')",
+        "backgroundSize": "250px 350px",
       },
     },
     "ref": null,
@@ -84,20 +89,10 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "hello",
-        },
-        "ref": null,
-        "rendered": "hello",
-        "type": "h1",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
         "nodeType": "class",
         "props": Object {
           "children": "Show More",
+          "className": "show-more-summary",
           "replace": false,
           "to": "/undefined/1",
         },
@@ -110,11 +105,29 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Favorite",
+          "children": <span
+            aria-labelledby="favorites-button"
+            role="img"
+>
+            ⭐
+</span>,
+          "className": "favorites-button",
           "onClick": [Function],
         },
         "ref": null,
-        "rendered": "Favorite",
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "aria-labelledby": "favorites-button",
+            "children": "⭐",
+            "role": "img",
+          },
+          "ref": null,
+          "rendered": "⭐",
+          "type": "span",
+        },
         "type": "button",
       },
     ],
@@ -127,24 +140,29 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h1>
-            hello
-</h1>,
           <Link
+            className="show-more-summary"
             replace={false}
             to="/undefined/1"
 >
             Show More
 </Link>,
           <button
+            className="favorites-button"
             onClick={[Function]}
 >
-            Favorite
+            <span
+                        aria-labelledby="favorites-button"
+                        role="img"
+            >
+                        ⭐
+            </span>
 </button>,
         ],
         "className": "card undefined",
         "style": Object {
           "background": "url('https://image.tmdb.org/t/p/w500//hello')",
+          "backgroundSize": "250px 350px",
         },
       },
       "ref": null,
@@ -152,20 +170,10 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "hello",
-          },
-          "ref": null,
-          "rendered": "hello",
-          "type": "h1",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
           "nodeType": "class",
           "props": Object {
             "children": "Show More",
+            "className": "show-more-summary",
             "replace": false,
             "to": "/undefined/1",
           },
@@ -178,11 +186,29 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Favorite",
+            "children": <span
+              aria-labelledby="favorites-button"
+              role="img"
+>
+              ⭐
+</span>,
+            "className": "favorites-button",
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Favorite",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "aria-labelledby": "favorites-button",
+              "children": "⭐",
+              "role": "img",
+            },
+            "ref": null,
+            "rendered": "⭐",
+            "type": "span",
+          },
           "type": "button",
         },
       ],
