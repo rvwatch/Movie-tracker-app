@@ -105,3 +105,15 @@
   font-family: 'Roboto', sans-serif;
   font-size: 24px;
 }
+
+.error-message {
+  float: right;
+  padding: 10px;
+  border: 2px solid #062a78;
+  border-radius: 15px;
+  margin: auto;
+  background-color: rgba(0,0,0,0.5);
+  color: #f1cc54;
+  font-family: 'Anton', sans-serif;
+  font-size: 24px; 
+}
