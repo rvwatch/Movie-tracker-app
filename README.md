@@ -4,9 +4,9 @@ An application used to present new movie releases, and allows a user to add a mo
 
 ## Team
 
-Ngoc Phan
-Pat McLaughlin
-Ricardo Viera
+[Ngoc Phan](https://github.com/nphan24)
+[Pat McLaughlin](https://github.com/patrickmc21)
+[Ricardo Viera](https://github.com/rvwatch)
 
 ## Project Status
 
